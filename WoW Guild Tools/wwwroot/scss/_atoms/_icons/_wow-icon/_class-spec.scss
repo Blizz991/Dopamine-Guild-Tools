@@ -1,0 +1,15 @@
+$classSpecIconSize: 56;
+$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+$classPosition: 0;
+$specPosition: -$classSpecIconSize;
+$wowClassesSpecList: (
+    druid: (balance, feral, restoration),
+    hunter: (beastmastery, marksmanship, survival),
+    mage: (arcane, fire, frost),
+    paladin: (holy, protection, retribution),
+    priest: (discipline, holy, shadow),
+    rogue: (assassination, combat, sublety),
+    shaman: (elemental, enhancement, restoration),
+    warlock: (affliction, demonology, destruction),
+    warrior: (arms, fury, protection) 
+);

@@ -1,0 +1,43 @@
+﻿$wowChatDefaultChannel: #FEC1C0;
+$wowChatSystemMessage: #FFFF00;
+$wowChatGuild: #3CE13F;
+$wowChatOfficer: #40BC40;
+$wowChatParty: #AAABFE;
+$wowChatPartyLeader: #77C8FF;
+$wowChatLinkedSpell: #67BCFF;
+$wowChatSay: #FFFFFF;
+$wowChatWhisper: #FF7EFF;
+$wowChatYell: #FF3F40;
+$wowChatEmote: #FF7E40;
+$wowChatInstance: #FF7D01;
+$wowChatInstanceLeader: #FF4709;
+$wowChatRaidWarning: #FF4700;
+$wowChatAchievement: #FFFC01;
+$wowChatBnetWhisper: #00FAF6;
+$wowChatBnetConversation: #00ADEF;
+
+$wowChatColors: (
+  "default-channel": $wowChatDefaultChannel,
+  "system-message": $wowChatSystemMessage,
+  'guild': $wowChatGuild,
+  'officer': $wowChatOfficer,
+  'party': $wowChatParty,
+  'party-leader': $wowChatPartyLeader,
+  'linked-spell': $wowChatLinkedSpell,
+  'say': $wowChatSay,
+  'whisper': $wowChatWhisper,
+  'yell': $wowChatYell,
+  'emote': $wowChatEmote,
+  'instance': $wowChatInstance,
+  'instance-leader': $wowChatInstanceLeader,
+  'raid-warning': $wowChatRaidWarning,
+  'achievement': $wowChatAchievement,
+  'bnet-whisper': $wowChatBnetWhisper,
+  'bnet-conversation': $wowChatBnetConversation
+);
+
+@each $channel, $wowChatColor in $wowChatColors {
+  .wow-color--#{$channel} {
+      color: $wowChatColor;
+  }
+}

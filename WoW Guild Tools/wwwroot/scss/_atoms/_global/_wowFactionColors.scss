@@ -1,0 +1,27 @@
+﻿$allianceColor: #2149a5;
+$hordeColor: #ad150c;
+
+$wowFactions: (
+  "alliance": $allianceColor,
+  "horde": $hordeColor,
+);
+
+@each $wowFaction, $wowFactionColor in $wowFactions {
+  .faction {
+    &--#{$wowFaction} {
+      color: $wowFactionColor;
+
+      &-bg {
+        color: #fff;
+        background-color: $wowFactionColor;
+      }
+
+      &-checkbox.mat-checkbox-checked,
+      &-checkbox.mat-checkbox-indeterminate {
+        .mat-checkbox-background {
+          background-color: $wowFactionColor !important;
+        }
+      }
+    }
+  }
+}

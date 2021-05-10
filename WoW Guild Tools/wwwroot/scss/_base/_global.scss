@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $darkColor;
+  color: $bodyTextColor;
+  min-height: calc(100vh - #{$footerHeight} );
+}
+
+.main {
+  /*  @include container;
+  @include container-padding;*/
+  @include grid-container();
+
+  &__content {
+    @include grid-container(12);
+    @include grid-column(10);
+    padding: 32px 32px 32px 0;
+  }
+}
+
+/*.section {
+  margin: $sectionMargin;
+}*/
+
+.collapse-trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

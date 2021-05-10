@@ -1,0 +1,16 @@
+.footer {
+  height: $footerHeight;
+  padding: 8px 32px;
+  
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+
+    &-item {
+    }
+  }
+}

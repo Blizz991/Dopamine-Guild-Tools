@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@100;400;500;700&display=swap");
+
+$header-style__font: 'Lato', sans-serif;
+$text-style__font: 'Roboto', sans-serif;
+
+$text-style__margin: 0 0 16px 0;
+
+@mixin heading { //Defaults
+  font-family: $header-style__font;
+  font-style: normal;
+  font-weight: 400; //Regular
+  margin: $text-style__margin;
+  // color: $color__primary;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin heading-h1 {
+  @include heading;
+  font-size: 72px;
+}
+
+@mixin heading-h2 {
+  @include heading;
+  font-size: 64px;
+}
+
+@mixin heading-h3 {
+  @include heading;
+  font-size: 48px;
+}
+
+@mixin heading-h4 {
+  @include heading;
+  font-size: 32px;
+}
+
+@mixin heading-h5 {
+  @include heading;
+  font-size: 24px;
+}
+
+@mixin heading-h6 {
+  @include heading;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@mixin text($includeMargin: true) {
+  font-family: $text-style__font;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  @if $includeMargin {
+    margin: $text-style__margin;
+  }
+}
+
+@mixin form-text {
+  @include text;
+  font-size: 18px;
+}
+
+@mixin text-link {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  /*color: $link-color;*/
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@mixin text-button {
+  @include text;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+}

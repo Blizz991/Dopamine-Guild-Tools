@@ -1,0 +1,26 @@
+$itemQualities: (
+  "misc": $miscQualityColor,
+  "poor":  $poorQualityColor,
+  "common": $commonQualityColor,
+  "uncommon": $uncommonQualityColor,
+  "rare": $rareQualityColor,
+  "epic": $epicQualityColor,
+  "legendary": $legendaryQualityColor,
+  "artifact": $artifactQualityColor,
+  "heirloom": $heirloomQualityColor,
+  "wow-token": $wowtokenQualityColor
+);
+
+.item {
+  &__quality {
+    @each $quality, $qualityColor in $itemQualities {
+      &--#{$quality} {
+        color: $qualityColor !important;
+
+        &:hover {
+          color: $qualityColor;
+        }
+      }
+    }
+  }
+}

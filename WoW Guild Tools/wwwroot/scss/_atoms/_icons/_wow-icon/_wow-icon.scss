@@ -1,0 +1,45 @@
+/// <reference path="../../../_base/mixins.scss" />
+@import "class-spec.scss";
+@import "raid-marker-icons";
+@import "race-icons";
+
+.wow-icon {
+  @each $wowClass, $wowClassSpecs in $wowClassesSpecList {
+    &__#{$wowClass} {
+      @include wow-icon($classPosition, 0, $classSpecBackgroundUrl, $classSpecIconSize);
+
+      @each $wowClassSpec in $wowClassSpecs {
+        &--#{$wowClassSpec} {
+          @include wow-icon($classPosition, $specPosition, $classSpecBackgroundUrl, $classSpecIconSize);
+        }
+
+        $specPosition: $specPosition - $classSpecIconSize;
+      }
+    }
+
+    $classPosition: $classPosition - $classSpecIconSize;
+  }
+
+  @each $raidMarker in $raidMarkers {
+    &__raid-marker--#{$raidMarker} {
+      @include wow-icon(0, $raidMarkerPositionY, $raidMarkerIconsBackgroundUrl, $raidMarkerIconSize);
+    }
+
+    $raidMarkerPositionY: $raidMarkerPositionY - $raidMarkerIconSize;
+  }
+
+  @each $raceIcon in $raceIcons {
+    $raceIconIndex: 1;
+    &__race--#{$raceIcon} {
+      @include wow-icon($racePositionX, $racePositionY, $raceIconsBackgroundUrl, $raceIconSize);
+    }
+
+    $racePositionX: $racePositionX - $raceIconSize;
+    $raceIconIndex: $raceIconIndex + 1;
+    
+    @if $raceIconIndex == 4 {
+      $racePositionY: $racePositionY - $raceIconSize;
+      $racePositionX: 0;
+    }
+  }
+}

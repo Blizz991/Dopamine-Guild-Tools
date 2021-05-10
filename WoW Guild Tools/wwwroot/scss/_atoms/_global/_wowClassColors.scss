@@ -1,0 +1,29 @@
+/* #region Class Colors*/
+$wowClasses: (
+  "death-knight": $deathKnightClassColor,
+  "demon-hunter": $demonHunterClassColor,
+  "druid": $druidClassColor,
+  "hunter": $hunterClassColor,
+  "mage": $mageClassColor,
+  "monk": $monkClassColor,
+  "paladin": $paladinClassColor,
+  "priest": $priestClassColor,
+  "rogue": $rogueClassColor,
+  "shaman": $shamanClassColor,
+  "warlock": $warlockClassColor,
+  "warrior": $warriorClassColor
+);
+
+@each $wowClass, $wowClassColor in $wowClasses {
+  .#{$wowClass} {
+    &-text {
+      color: $wowClassColor;
+    }
+
+    &-bg {
+      background-color: $wowClassColor !important;
+    }
+  }
+}
+
+/* #endregion Class Colors*/

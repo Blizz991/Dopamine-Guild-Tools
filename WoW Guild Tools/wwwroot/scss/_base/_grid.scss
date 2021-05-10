@@ -1,0 +1,34 @@
+﻿@mixin container-padding {
+  padding-right: $containerPadding--right;
+  padding-left: $containerPadding--left;
+}
+
+/*@mixin flush-container {
+  //Flush to edge of container
+  margin-right: -$containerPadding--right;
+  margin-left: -$containerPadding--left;
+}*/
+
+@mixin container() {
+  z-index: 0;
+}
+
+@mixin grid-container($_columns: 12) {
+  @include container();
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template-columns: repeat($_columns, 1fr);
+}
+
+@mixin grid-column($n: 12, $start-col: auto) {
+  grid-column: $start-col / span $n;
+}
+
+@mixin max-grid-columns {
+  @include grid-column(12);
+}
+
+/// Usage for media: override-grid-gap(16px);
+@mixin override-grid-gap($override-row-gap, $override-column-gap) {
+  grid-gap: $override-row-gap $override-column-gap;
+}

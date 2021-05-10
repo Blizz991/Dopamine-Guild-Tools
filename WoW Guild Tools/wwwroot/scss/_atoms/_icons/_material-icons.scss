@@ -1,0 +1,40 @@
+﻿
+// @see http://google.github.io/material-design-icons/
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined&display=swap');
+
+// @see https://material.io/resources/icons/?icon=search&style=baseline
+// .material-icons
+//
+// use:
+// <i class="material-icons">face</i>
+
+
+@mixin material-icons($_outlined : false) {
+  @if $_outlined {
+    font-family: 'Material Icons Outlined';
+  } @else {
+    font-family: 'Material Icons';
+  }
+
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  display: inline-block;
+}
+
+.material-icons {
+  @include material-icons();
+}
+
+.material-icons-outlined {
+  @include material-icons(true);
+}

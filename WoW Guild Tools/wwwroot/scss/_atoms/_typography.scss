@@ -1,0 +1,49 @@
+/// <reference path="../_base/_text-styles.scss" />
+h1 {
+  @include heading-h1;
+}
+
+h2 {
+  @include heading-h2;
+}
+
+h3 {
+  @include heading-h3;
+}
+
+h4 {
+  @include heading-h4;
+}
+
+h5 {
+  @include heading-h5;
+}
+
+h6 {
+  @include heading-h6;
+}
+
+body {
+  @include text(false);
+}
+
+p, .field,
+date, address, time, ul, li, ol {
+  @include text;
+}
+
+li, ol {
+  margin: unset;
+}
+
+/*p, address {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}*/
+
+
+body:not(div.wowhead-tooltip) a {
+  @include text-link;
+  outline: 0;
+}
