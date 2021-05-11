@@ -1,18 +1,19 @@
 ﻿/// <reference path="../../_base/_variables.scss" />
-@mixin button-colors($_text: $bodyTextColor, $_bg: $primaryColor, $borders: true) {
+@mixin button-colors($_text: $lightColor, $_bg: $primaryColor, $hoverBg: $primaryHoverColor, $_hoverText: $white, $borders: false) {
   background: $_bg;
   color: $_text;
 
   @if $borders {
     border-color: $_text;
     background: transparent;
-  } @else {
+  }
+  @else {
     border: 1px solid transparent;
   }
 
   &:hover {
-    background: $_text;
-    color: $_bg;
+    background: $hoverBg;
+    color: $_hoverText;
 
     @if $borders == false {
       border: 1px solid $_bg;
@@ -23,23 +24,23 @@
 .button,
 [type="submit"],
 [type="reset"],
-[type="button"]:not(.trigger) {
+[type="button"]:not(.trigger):not(.collapsible__trigger) {
   @include text-button;
   text-align: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 20px;
+  padding: 8px 12px;
   outline: none;
   cursor: pointer;
   white-space: nowrap;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  border-radius: 8px;
+  border-radius: 4px;
   transition: background-color 150ms, color 150ms;
-  text-decoration: underline;
+  text-decoration: none;
   position: relative;
   border: 1px solid transparent;
-  height: 48px;
+  height: 32px;
 
   @include button-colors();
 
@@ -51,21 +52,8 @@
     cursor: not-allowed;
   }
 
-  &.button--icon {
-    padding-right: 48px;
-
-    &:before {
-      @include material-icons();
-      content: "arrow_forward";
-      position: absolute;
-      top: 50%;
-      right: 16px;
-      transform: translateY(-50%);
-    }
-  }
-
   &.icon-button {
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     padding: 8px;
     width: 48px;
 
@@ -79,8 +67,47 @@
     }
   }
 
-  &.button--inverse {
-    @include button-colors($primaryColor, $bodyTextColor, true);
-    box-shadow: none;
+  &.button {
+    &--icon {
+      padding-right: 40px;
+
+      &:before {
+        @include material-icons();
+        font-size: 22px;
+        content: "arrow_forward";
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--secondary {
+      @include button-colors($lightColor, $secondaryColor, $secondaryHoverColor);
+    }
+
+    &--success {
+      @include button-colors($lightColor, $successColor, $successHoverColor);
+    }
+
+    &--info {
+      @include button-colors($lightColor, $infoColor, $infoHoverColor);
+    }
+
+    &--warning {
+      @include button-colors($lightColor, $warningColor, $warningHoverColor);
+    }
+
+    &--danger {
+      @include button-colors($lightColor, $dangerColor, $dangerHoverColor);
+    }
+
+    &--light {
+      @include button-colors($darkColor, $lightColor, $lightHoverColor, $darkHoverColor);
+    }
+
+    &--dark {
+      @include button-colors($lightColor, $darkColor, $darkHoverColor);
+    }
   }
 }

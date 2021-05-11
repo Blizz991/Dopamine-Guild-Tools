@@ -43,7 +43,7 @@ li, ol {
 }*/
 
 
-body:not(div.wowhead-tooltip) a {
+body:not(div.wowhead-tooltip) a:not(.button) {
   @include text-link;
   text-decoration: none;
   outline: 0;

@@ -361,7 +361,7 @@ h1 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-size: 72px; }
+  font-size: 32px; }
 
 h2 {
   font-family: "Lato", sans-serif;
@@ -370,7 +370,7 @@ h2 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-size: 64px; }
+  font-size: 24px; }
 
 h3 {
   font-family: "Lato", sans-serif;
@@ -379,7 +379,7 @@ h3 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-size: 48px; }
+  font-size: 18px; }
 
 h4 {
   font-family: "Lato", sans-serif;
@@ -388,7 +388,7 @@ h4 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-size: 32px; }
+  font-size: 16px; }
 
 h5 {
   font-family: "Lato", sans-serif;
@@ -397,7 +397,7 @@ h5 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-size: 24px; }
+  font-size: 14px; }
 
 h6 {
   font-family: "Lato", sans-serif;
@@ -406,15 +406,14 @@ h6 {
   margin: 0 0 16px 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  font-weight: bold;
-  font-size: 18px; }
+  font-size: 12px; }
 
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.3;
   -webkit-font-smoothing: antialiased; }
 
 p, .field,
@@ -422,8 +421,8 @@ date, address, time, ul, li, ol {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.3;
   -webkit-font-smoothing: antialiased;
   margin: 0 0 16px 0; }
 
@@ -435,13 +434,13 @@ li, ol {
     margin-bottom: 0;
   }
 }*/
-body:not(div.wowhead-tooltip) a {
+body:not(div.wowhead-tooltip) a:not(.button) {
   color: #D9D9D9;
   position: relative;
   text-decoration: none;
   cursor: pointer;
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.125;
   text-decoration: none;
   outline: 0; }
 
@@ -869,93 +868,65 @@ body:not(div.wowhead-tooltip) a {
 .button,
 [type="submit"],
 [type="reset"],
-[type="button"]:not(.trigger) {
+[type="button"]:not(.trigger):not(.collapsible__trigger) {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.3;
   -webkit-font-smoothing: antialiased;
-  margin: 0 0 16px 0;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.125;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 20px;
+  padding: 8px 12px;
   outline: none;
   cursor: pointer;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: background-color 150ms, color 150ms;
-  text-decoration: underline;
+  text-decoration: none;
   position: relative;
   border: 1px solid transparent;
-  height: 48px;
+  height: 32px;
   background: #3A3F44;
-  color: #CCC;
-  border-color: #CCC;
-  background: transparent; }
+  color: #E9ECEF;
+  border: 1px solid transparent; }
   .button:hover,
   [type="submit"]:hover,
   [type="reset"]:hover,
-  [type="button"]:not(.trigger):hover {
-    background: #CCC;
-    color: #3A3F44; }
+  [type="button"]:not(.trigger):not(.collapsible__trigger):hover {
+    background: #2E3236;
+    color: #fff;
+    border: 1px solid #3A3F44; }
   .button[disabled], .button .disabled,
   [type="submit"][disabled],
   [type="submit"] .disabled,
   [type="reset"][disabled],
   [type="reset"] .disabled,
-  [type="button"]:not(.trigger)[disabled],
-  [type="button"]:not(.trigger) .disabled {
+  [type="button"]:not(.trigger):not(.collapsible__trigger)[disabled],
+  [type="button"]:not(.trigger):not(.collapsible__trigger) .disabled {
     color: #fff !important;
     border-color: #fff !important;
     /*background-color: $gray-800 !important;*/
     opacity: .4;
     cursor: not-allowed; }
-  .button.button--icon,
-  [type="submit"].button--icon,
-  [type="reset"].button--icon,
-  [type="button"]:not(.trigger).button--icon {
-    padding-right: 48px; }
-    .button.button--icon:before,
-    [type="submit"].button--icon:before,
-    [type="reset"].button--icon:before,
-    [type="button"]:not(.trigger).button--icon:before {
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 24px;
-      line-height: 1;
-      letter-spacing: normal;
-      text-transform: none;
-      white-space: nowrap;
-      word-wrap: normal;
-      direction: ltr;
-      -webkit-font-feature-settings: 'liga';
-      -webkit-font-smoothing: antialiased;
-      user-select: none;
-      display: inline-block;
-      content: "arrow_forward";
-      position: absolute;
-      top: 50%;
-      right: 16px;
-      transform: translateY(-50%); }
   .button.icon-button,
   [type="submit"].icon-button,
   [type="reset"].icon-button,
-  [type="button"]:not(.trigger).icon-button {
-    border-radius: 50%;
+  [type="button"]:not(.trigger):not(.collapsible__trigger).icon-button {
+    /*border-radius: 50%;*/
     padding: 8px;
     width: 48px; }
     .button.icon-button:before,
     [type="submit"].icon-button:before,
     [type="reset"].icon-button:before,
-    [type="button"]:not(.trigger).icon-button:before {
+    [type="button"]:not(.trigger):not(.collapsible__trigger).icon-button:before {
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -975,61 +946,133 @@ body:not(div.wowhead-tooltip) a {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
-  .button.button--inverse,
-  [type="submit"].button--inverse,
-  [type="reset"].button--inverse,
-  [type="button"]:not(.trigger).button--inverse {
-    background: #CCC;
-    color: #3A3F44;
-    border-color: #3A3F44;
-    background: transparent;
-    box-shadow: none; }
-    .button.button--inverse:hover,
-    [type="submit"].button--inverse:hover,
-    [type="reset"].button--inverse:hover,
-    [type="button"]:not(.trigger).button--inverse:hover {
-      background: #3A3F44;
-      color: #CCC; }
-
-.collapsible__trigger {
-  color: #D9D9D9;
-  position: relative;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 1.2;
-  width: 100%;
-  cursor: pointer;
-  display: flex;
-  background-color: transparent;
-  border: none; }
-
-.collapsible__state-indicator {
-  margin-left: auto; }
-  .collapsible__state-indicator::before {
-    content: 'expand_more'; }
-
-.collapsible--shown .collapsible__state-indicator::before {
-  content: 'expand_less'; }
-
-.collapsible__list {
-  background-color: #3A3F44;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out; }
-
-.collapsible__link {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px 12px 48px; }
-  .collapsible__link:hover {
-    background-color: #2E3236; }
-
-.collapsible__icon {
-  margin-right: 8px; }
+  .button.button--icon,
+  [type="submit"].button--icon,
+  [type="reset"].button--icon,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--icon {
+    padding-right: 40px; }
+    .button.button--icon:before,
+    [type="submit"].button--icon:before,
+    [type="reset"].button--icon:before,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--icon:before {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      display: inline-block;
+      font-size: 22px;
+      content: "arrow_forward";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%); }
+  .button.button--secondary,
+  [type="submit"].button--secondary,
+  [type="reset"].button--secondary,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--secondary {
+    background: #7A8288;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--secondary:hover,
+    [type="submit"].button--secondary:hover,
+    [type="reset"].button--secondary:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--secondary:hover {
+      background: #6E757B;
+      color: #fff;
+      border: 1px solid #7A8288; }
+  .button.button--success,
+  [type="submit"].button--success,
+  [type="reset"].button--success,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--success {
+    background: #62C462;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--success:hover,
+    [type="submit"].button--success:hover,
+    [type="reset"].button--success:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--success:hover {
+      background: #4FBD4F;
+      color: #fff;
+      border: 1px solid #62C462; }
+  .button.button--info,
+  [type="submit"].button--info,
+  [type="reset"].button--info,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--info {
+    background: #5BC0DE;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--info:hover,
+    [type="submit"].button--info:hover,
+    [type="reset"].button--info:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--info:hover {
+      background: #46B8DA;
+      color: #fff;
+      border: 1px solid #5BC0DE; }
+  .button.button--warning,
+  [type="submit"].button--warning,
+  [type="reset"].button--warning,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--warning {
+    background: #F89406;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--warning:hover,
+    [type="submit"].button--warning:hover,
+    [type="reset"].button--warning:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--warning:hover {
+      background: #DF8505;
+      color: #fff;
+      border: 1px solid #F89406; }
+  .button.button--danger,
+  [type="submit"].button--danger,
+  [type="reset"].button--danger,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--danger {
+    background: #EE5F5B;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--danger:hover,
+    [type="submit"].button--danger:hover,
+    [type="reset"].button--danger:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--danger:hover {
+      background: #EC4844;
+      color: #fff;
+      border: 1px solid #EE5F5B; }
+  .button.button--light,
+  [type="submit"].button--light,
+  [type="reset"].button--light,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--light {
+    background: #E9ECEF;
+    color: #272B30;
+    border: 1px solid transparent; }
+    .button.button--light:hover,
+    [type="submit"].button--light:hover,
+    [type="reset"].button--light:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--light:hover {
+      background: #DADFE4;
+      color: #1C1E22;
+      border: 1px solid #E9ECEF; }
+  .button.button--dark,
+  [type="submit"].button--dark,
+  [type="reset"].button--dark,
+  [type="button"]:not(.trigger):not(.collapsible__trigger).button--dark {
+    background: #272B30;
+    color: #E9ECEF;
+    border: 1px solid transparent; }
+    .button.button--dark:hover,
+    [type="submit"].button--dark:hover,
+    [type="reset"].button--dark:hover,
+    [type="button"]:not(.trigger):not(.collapsible__trigger).button--dark:hover {
+      background: #1C1E22;
+      color: #fff;
+      border: 1px solid #272B30; }
 
 .wow-color--default-channel {
   color: #FEC1C0; }
@@ -1252,6 +1295,46 @@ body:not(div.wowhead-tooltip) a {
     padding: 12px 16px; }
   .main-nav__icon {
     margin-right: 8px; }
+
+.collapsible__trigger {
+  color: #D9D9D9;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.125;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  border: none; }
+
+.collapsible__state-indicator {
+  margin-left: auto; }
+  .collapsible__state-indicator::before {
+    content: 'expand_more'; }
+
+.collapsible--shown .collapsible__state-indicator::before {
+  content: 'expand_less'; }
+
+.collapsible__list {
+  background-color: #3A3F44;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out; }
+
+.collapsible__link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px 12px 48px; }
+  .collapsible__link:hover {
+    background-color: #2E3236; }
+
+.collapsible__icon {
+  margin-right: 8px; }
 
 .footer {
   height: 40px;

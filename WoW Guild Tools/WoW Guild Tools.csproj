@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\scss\_organisms\_app\" />
+    <Folder Include="wwwroot\scss\_organisms\_views\" />
   </ItemGroup>
 
   <ItemGroup>
