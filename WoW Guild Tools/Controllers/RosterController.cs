@@ -28,24 +28,24 @@ namespace WoW_Guild_Tools.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Roster/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Roster/Details/5
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var raider = await _context.Raiders
-                .Include(r => r.Main)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (raider == null)
-            {
-                return NotFound();
-            }
+        //    var raider = await _context.Raiders
+        //        .Include(r => r.Main)
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (raider == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(raider);
-        }
+        //    return View(raider);
+        //}
 
         // GET: Roster/Create
         public IActionResult Create()

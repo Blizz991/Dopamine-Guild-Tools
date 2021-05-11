@@ -45,5 +45,6 @@ li, ol {
 
 body:not(div.wowhead-tooltip) a {
   @include text-link;
+  text-decoration: none;
   outline: 0;
 }

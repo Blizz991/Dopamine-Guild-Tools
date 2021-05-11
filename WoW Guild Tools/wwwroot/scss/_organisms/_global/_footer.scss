@@ -1,5 +1,6 @@
 .footer {
   height: $footerHeight;
+  border-top: 2px solid $darkHoverColor;
   padding: 8px 32px;
   
   &__list {

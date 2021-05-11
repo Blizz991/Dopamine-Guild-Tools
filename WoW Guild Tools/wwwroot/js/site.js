@@ -1,4 +1,21 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿var coll = document.getElementsByClassName("collapsible__trigger");
+var i;
 
-// Write your JavaScript code.
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+        var content = this.nextElementSibling;
+        this.classList.toggle("collapsible--shown");
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+
+    //Uncollapse is there's an active element within the collapse
+    //TODO: swap to using active?
+    if (coll[i].classList.contains("collapsible--shown")) {
+        var content = coll[i].nextElementSibling;
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
