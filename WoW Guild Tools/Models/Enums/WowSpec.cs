@@ -4,6 +4,8 @@ namespace WoW_Guild_Tools.Models
 {
     public enum WowSpec
     {
+        [Display(Name = "Select Spec")]
+        Unset,
         Balance,
         [Display(Name = "Feral Combat")]
         FeralCombat,

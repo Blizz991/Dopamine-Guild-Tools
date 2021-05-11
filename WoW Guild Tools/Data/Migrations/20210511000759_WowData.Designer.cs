@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WoW_Guild_Tools.Data;
 
-namespace WoW_Guild_Tools.Data.Migrations
+namespace WoW_Guild_Tools.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210510170526_WowData")]
+    [Migration("20210511000759_WowData")]
     partial class WowData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -221,27 +221,6 @@ namespace WoW_Guild_Tools.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WoW_Guild_Tools.Models.Profession", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("RaiderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RaiderId");
-
-                    b.ToTable("Professions");
-                });
-
             modelBuilder.Entity("WoW_Guild_Tools.Models.Raider", b =>
                 {
                     b.Property<int>("Id")
@@ -249,11 +228,9 @@ namespace WoW_Guild_Tools.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ClassWowClassId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsAlt")
-                        .HasColumnType("bit");
+                    b.Property<string>("Class")
+                        .IsRequired()
+                        .HasColumnType("nchar(8)");
 
                     b.Property<int?>("MainId")
                         .HasColumnType("int");
@@ -263,163 +240,35 @@ namespace WoW_Guild_Tools.Data.Migrations
                         .HasMaxLength(12)
                         .HasColumnType("nvarchar(12)");
 
-                    b.Property<int?>("RaceWowRaceId")
-                        .HasColumnType("int");
+                    b.Property<string>("Profession1")
+                        .IsRequired()
+                        .HasColumnType("nchar(15)");
 
-                    b.Property<int?>("RankRaiderRankId")
-                        .HasColumnType("int");
+                    b.Property<string>("Profession2")
+                        .IsRequired()
+                        .HasColumnType("nchar(15)");
 
-                    b.Property<int?>("RoleWowRoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("Race")
+                        .IsRequired()
+                        .HasColumnType("nchar(8)");
 
-                    b.Property<int?>("SpecId")
-                        .HasColumnType("int");
+                    b.Property<string>("Rank")
+                        .IsRequired()
+                        .HasColumnType("nchar(11)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nchar(6)");
+
+                    b.Property<string>("Spec")
+                        .IsRequired()
+                        .HasColumnType("nchar(13)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassWowClassId");
 
                     b.HasIndex("MainId");
 
-                    b.HasIndex("RaceWowRaceId");
-
-                    b.HasIndex("RankRaiderRankId");
-
-                    b.HasIndex("RoleWowRoleId");
-
-                    b.HasIndex("SpecId");
-
                     b.ToTable("Raiders");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.RaiderRank", b =>
-                {
-                    b.Property<int>("RaiderRankId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("RaiderRankName")
-                        .HasColumnType("int");
-
-                    b.HasKey("RaiderRankId");
-
-                    b.ToTable("RaiderRank");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowClass", b =>
-                {
-                    b.Property<int>("WowClassId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WowClassId");
-
-                    b.ToTable("WowClasses");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowFaction", b =>
-                {
-                    b.Property<int>("WowFactionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WowFactionId");
-
-                    b.ToTable("WowFaction");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowRace", b =>
-                {
-                    b.Property<int>("WowRaceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("WowFactionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("WowRaceId");
-
-                    b.HasIndex("WowFactionId");
-
-                    b.ToTable("Races");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowRole", b =>
-                {
-                    b.Property<int>("WowRoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WowRoleId");
-
-                    b.ToTable("WowRole");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowSpec", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("WowSpecs");
-                });
-
-            modelBuilder.Entity("WowClassWowRace", b =>
-                {
-                    b.Property<int>("ClassesWowClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WowRacesWowRaceId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ClassesWowClassId", "WowRacesWowRaceId");
-
-                    b.HasIndex("WowRacesWowRaceId");
-
-                    b.ToTable("WowClassWowRace");
-                });
-
-            modelBuilder.Entity("WowClassWowSpec", b =>
-                {
-                    b.Property<int>("WowClassesWowClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WowSpecsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("WowClassesWowClassId", "WowSpecsId");
-
-                    b.HasIndex("WowSpecsId");
-
-                    b.ToTable("WowClassWowSpec");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -473,101 +322,13 @@ namespace WoW_Guild_Tools.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WoW_Guild_Tools.Models.Profession", b =>
-                {
-                    b.HasOne("WoW_Guild_Tools.Models.Raider", null)
-                        .WithMany("Professions")
-                        .HasForeignKey("RaiderId");
-                });
-
             modelBuilder.Entity("WoW_Guild_Tools.Models.Raider", b =>
                 {
-                    b.HasOne("WoW_Guild_Tools.Models.WowClass", "Class")
-                        .WithMany()
-                        .HasForeignKey("ClassWowClassId");
-
                     b.HasOne("WoW_Guild_Tools.Models.Raider", "Main")
                         .WithMany()
                         .HasForeignKey("MainId");
 
-                    b.HasOne("WoW_Guild_Tools.Models.WowRace", "Race")
-                        .WithMany()
-                        .HasForeignKey("RaceWowRaceId");
-
-                    b.HasOne("WoW_Guild_Tools.Models.RaiderRank", "Rank")
-                        .WithMany()
-                        .HasForeignKey("RankRaiderRankId");
-
-                    b.HasOne("WoW_Guild_Tools.Models.WowRole", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleWowRoleId");
-
-                    b.HasOne("WoW_Guild_Tools.Models.WowSpec", "Spec")
-                        .WithMany()
-                        .HasForeignKey("SpecId");
-
-                    b.Navigation("Class");
-
                     b.Navigation("Main");
-
-                    b.Navigation("Race");
-
-                    b.Navigation("Rank");
-
-                    b.Navigation("Role");
-
-                    b.Navigation("Spec");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowRace", b =>
-                {
-                    b.HasOne("WoW_Guild_Tools.Models.WowFaction", "WowFaction")
-                        .WithMany("Races")
-                        .HasForeignKey("WowFactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WowFaction");
-                });
-
-            modelBuilder.Entity("WowClassWowRace", b =>
-                {
-                    b.HasOne("WoW_Guild_Tools.Models.WowClass", null)
-                        .WithMany()
-                        .HasForeignKey("ClassesWowClassId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WoW_Guild_Tools.Models.WowRace", null)
-                        .WithMany()
-                        .HasForeignKey("WowRacesWowRaceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WowClassWowSpec", b =>
-                {
-                    b.HasOne("WoW_Guild_Tools.Models.WowClass", null)
-                        .WithMany()
-                        .HasForeignKey("WowClassesWowClassId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WoW_Guild_Tools.Models.WowSpec", null)
-                        .WithMany()
-                        .HasForeignKey("WowSpecsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.Raider", b =>
-                {
-                    b.Navigation("Professions");
-                });
-
-            modelBuilder.Entity("WoW_Guild_Tools.Models.WowFaction", b =>
-                {
-                    b.Navigation("Races");
                 });
 #pragma warning restore 612, 618
         }

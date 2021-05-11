@@ -8,6 +8,8 @@ namespace WoW_Guild_Tools.Models.Enums
 {
     public enum WowRace
     {
+        [Display(Name = "Select Race")]
+        Unset,
         Human,
         Dwarf,
         [Display(Name = "Night Elf")]

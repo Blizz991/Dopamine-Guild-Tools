@@ -8,6 +8,8 @@ namespace WoW_Guild_Tools.Models.Enums
 {
     public enum WowRaiderRank
     {
+        [Display(Name = "Select Rank")]
+        Unset,
         [Display(Name = "Guild Master")]
         GuildMaster,
         Officer,
