@@ -1,0 +1,40 @@
+﻿.roster {
+  @include grid-column(6);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+  }
+
+  &__add-raider {
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    &--edit {
+      &:before {
+        content: "edit";
+      }
+    }
+
+    &--delete {
+      &:before {
+        content: "delete";
+      }
+    }
+
+    &__mains {
+    }
+
+    &__alts {
+    }
+  }
+}
