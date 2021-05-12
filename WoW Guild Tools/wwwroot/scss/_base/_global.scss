@@ -11,9 +11,14 @@ body {
 .main {
   @include grid-container();
 
+  &__title {
+    @include grid-column(12);
+  }
+
   &__content {
     @include grid-container(12);
     @include grid-column(10);
-    padding: 32px 32px 32px 0;
+    grid-template-rows: auto 1fr;
+    padding: 16px 32px 32px 0;
   }
 }
