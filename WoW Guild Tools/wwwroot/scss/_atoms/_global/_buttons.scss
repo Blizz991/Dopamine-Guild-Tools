@@ -56,7 +56,6 @@
     /*border-radius: 50%;*/
     padding: 8px;
     width: 32px;
-
     /// Must have content to work (content being: 'content: "name_of_icon")
     &:before {
       @include material-icons();
@@ -70,11 +69,11 @@
   &.button {
     &--icon {
       padding-right: 40px;
-
+      /// Must have content to work (content being: 'content: "name_of_icon")
       &:before {
         @include material-icons();
         font-size: 22px;
-        content: "arrow_forward";
+        /*content: "arrow_forward";*/
         position: absolute;
         top: 50%;
         right: 12px;

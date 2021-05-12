@@ -1,94 +1,191 @@
 ﻿@model IEnumerable<WoW_Guild_Tools.Models.Raider>
 
-@{
-    ViewData["Title"] = "Roster";
-}
+@{ ViewData["Title"] = "Roster"; }
 
 @*<h1>Roster</h1>*@
 <section class="roster">
-    <header class="roster__header">
-        <h2 class="roster__title">Mains</h2>
-        <a class="roster__add-raider button button--success button--icon" asp-action="Create">
-            Add new raider
-        </a>
-    </header>
-    <article class="table-container">
-        <table class="roster__mains table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Race)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Class)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Spec)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Role)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Rank)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Profession1)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Profession2)
-                    </th>
-                    @*<th>
-                            @Html.DisplayNameFor(model => model.Main)
-                        </th>*@
-                    <th>Options</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+    <section class="roster__characters">
+        <article class="roster__mains">
+            <header class="roster__header">
+                <h2 class="roster__title">Mains</h2>
+                <a class="roster__add-raider button button--success button--icon" asp-action="Create">
+                    Add new raider
+                </a>
+            </header>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Race)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Class)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Spec)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Role)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Rank)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Profession1)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Profession2)
-                        </td>
-                        @*<td>
-                                @Html.DisplayFor(modelItem => item.Main.Name)
-                            </td>*@
-                        <td>
-                            <div class="roster__options">
-                                <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" aria-label="Edit"></a>
-                                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                                <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
-                            </div>
-                        </td>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Race)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Class)
+                        </th>
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.Spec)
+                            </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Role)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Profession1)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Profession2)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Rank)
+                        </th>
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.Main)
+                            </th>*@
+                        <th>Options</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </article>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Where(r => r.IsAlt == false))
+                    {
+                        var wowClassClassName = @item.Class.ToString().ToWowClassCssClass();
+        <tr>
+            <td class="@wowClassClassName">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Race)
+            </td>
+            <td class="@wowClassClassName">
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            @*<td class="@wowClassClassName">
+                    @Html.DisplayFor(modelItem => item.Spec)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profession1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profession2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rank)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Main.Name)
+                </td>*@
+            <td>
+                <div class="roster__options">
+                    <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" aria-label="Edit"></a>
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                    <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
+                </div>
+            </td>
+        </tr>}
+                </tbody>
+            </table>
+        </article>
+    </section>
+    <section class="roster__overview">
+        <article class="roster__spec-overviews">
+            <header class="roster__header">
+                <h2 class="roster__title">Overview</h2>
+            </header>
+            <article class="roster__spec-tables">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class="bold">Tanks</td>
+                            <td>Mains</td>
+                            <td>Alts</td>
+                        </tr>
+                    </thead>
+                    @{ var mainTanks = Model.Where(r => r.Role == WowSpecRole.Tank && r.IsAlt == false).Count();
+                                    var altTanks = Model.Where(r => r.Role == WowSpecRole.Tank && r.IsAlt == true).Count(); }
+
+                    @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Tank))
+                    {
+        <tbody>
+            <tr>
+                <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
+                <td>@mainTanks </td>
+                <td>@altTanks</td>
+            </tr>
+        </tbody>}
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class="bold">Healers</td>
+                            <td>Mains</td>
+                            <td>Alts</td>
+                        </tr>
+                    </thead>
+                    @{ var mainHealers = Model.Where(r => r.Role == WowSpecRole.Healer && r.IsAlt == false).Count();
+                                    var altHealers = Model.Where(r => r.Role == WowSpecRole.Healer && r.IsAlt == true).Count(); }
+
+                    @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Healer))
+                    {
+        <tbody>
+            <tr>
+                <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
+                <td>@mainHealers </td>
+                <td>@altHealers</td>
+            </tr>
+        </tbody>}
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class="bold">Melee</td>
+                            <td>Mains</td>
+                            <td>Alts</td>
+                        </tr>
+                    </thead>
+                    @{ var mainMeleeCount = Model.Where(r => r.Role == WowSpecRole.Melee && r.IsAlt == false).Count();
+                                    var altMeleeCount = Model.Where(r => r.Role == WowSpecRole.Melee && r.IsAlt == true).Count(); }
+
+                    @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Melee))
+                    {
+                        var wowClass = Html.DisplayFor(modelItem => item.Class);
+
+        <tbody>
+            <tr>
+                <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
+                <td>@mainMeleeCount </td>
+                <td>@altMeleeCount</td>
+            </tr>
+        </tbody>}
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class="bold">Ranged</td>
+                            <td>Mains</td>
+                            <td>Alts</td>
+                        </tr>
+                    </thead>
+                    @{ var mainRangedCount = Model.Where(r => r.Role == WowSpecRole.Ranged && r.IsAlt == false).Count();
+                                    var altRangedCount = Model.Where(r => r.Role == WowSpecRole.Ranged && r.IsAlt == true).Count(); }
+
+                    @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Ranged))
+                    {
+                        var wowClass = Html.DisplayFor(modelItem => item.Class);
+
+        <tbody>
+            <tr>
+                <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
+                <td>@mainRangedCount </td>
+                <td>@altRangedCount</td>
+            </tr>
+        </tbody>}
+                </table>
+            </article>
+        </article>
+    </section>
 </section>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
