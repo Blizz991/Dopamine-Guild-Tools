@@ -1,0 +1,84 @@
+﻿@model WoW_Guild_Tools.Models.Raider
+@{
+    Layout = "_ModalLayout";
+}
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Race" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Race"
+                asp-items="Html.GetEnumSelectList<WowRace>()">
+        </select>
+        <span asp-validation-for="Race" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Class" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Class"
+                asp-items="Html.GetEnumSelectList<WowClass>()">
+            <option value="0">Select Class</option>
+        </select>
+        <span asp-validation-for="Class" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Spec" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Spec"
+                asp-items="Html.GetEnumSelectList<WowSpec>()">
+            <option value="0">Select Spec</option>
+        </select>
+        <span asp-validation-for="Spec" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Role" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Role"
+                asp-items="Html.GetEnumSelectList<WowSpecRole>()">
+            <option value="0">Select Role</option>
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rank" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Rank"
+                asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
+            <option value="0">Select Race</option>
+        </select>
+        <span asp-validation-for="Rank" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Profession1" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Profession1"
+                asp-items="Html.GetEnumSelectList<WowProfession>()">
+            <option value="0">Select Profession</option>
+        </select>
+        <span asp-validation-for="Profession1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Profession2" class="control-label"></label>
+        <select class="form-control"
+                asp-for="Profession2"
+                asp-items="Html.GetEnumSelectList<WowProfession>()">
+            <option value="0">Select Profession</option>
+        </select>
+        <span asp-validation-for="Profession2" class="text-danger"></span>
+    </div>
+    @*<input type="checkbox" asp-for="IsAlt" />
+        @if (Model.IsAlt)
+        {
+            <div class="form-group">
+                <label asp-for="MainId" class="control-label"></label>
+                <input asp-for="Main" class="form-control" />
+            </div>
+        }*@
+
+    <input type="submit" value="Create" class="button button--success" />
+</form>
