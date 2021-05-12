@@ -60,12 +60,6 @@ namespace WoW_Guild_Tools.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Race,Class,Spec,Role,Rank,Profession1,Profession2,MainId")] Raider raider)
         {
-            if (raider.Race == WowRace.Unset)
-            {
-                ModelState.AddModelError("Race", "Please select a race");
-            }
-            
-
             if (ModelState.IsValid)
             {
                 _context.Add(raider);

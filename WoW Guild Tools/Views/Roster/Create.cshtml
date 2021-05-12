@@ -2,11 +2,6 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>Raider</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -29,7 +24,6 @@
                 <select class="form-control"
                         asp-for="Class"
                         asp-items="Html.GetEnumSelectList<WowClass>()">
-                    <option value="0">Select Class</option>
                 </select>
                 <span asp-validation-for="Class" class="text-danger"></span>
             </div>
@@ -38,7 +32,6 @@
                 <select class="form-control"
                         asp-for="Spec"
                         asp-items="Html.GetEnumSelectList<WowSpec>()">
-                    <option value="0">Select Spec</option>
                 </select>
                 <span asp-validation-for="Spec" class="text-danger"></span>
             </div>
@@ -47,7 +40,6 @@
                 <select class="form-control"
                         asp-for="Role"
                         asp-items="Html.GetEnumSelectList<WowSpecRole>()">
-                    <option value="0">Select Role</option>
                 </select>
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
@@ -56,7 +48,6 @@
                 <select class="form-control"
                         asp-for="Rank"
                         asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
-                    <option value="0">Select Race</option>
                 </select>
                 <span asp-validation-for="Rank" class="text-danger"></span>
             </div>
@@ -65,7 +56,6 @@
                 <select class="form-control"
                         asp-for="Profession1"
                         asp-items="Html.GetEnumSelectList<WowProfession>()">
-                    <option value="0">Select Profession</option>
                 </select>
                 <span asp-validation-for="Profession1" class="text-danger"></span>
             </div>
@@ -74,7 +64,6 @@
                 <select class="form-control"
                         asp-for="Profession2"
                         asp-items="Html.GetEnumSelectList<WowProfession>()">
-                    <option value="0">Select Profession</option>
                 </select>
                 <span asp-validation-for="Profession2" class="text-danger"></span>
             </div>
