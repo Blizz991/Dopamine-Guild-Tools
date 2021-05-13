@@ -1,12 +1,16 @@
 ﻿.table {
-  border-collapse: collapse;
+  /*border-collapse: sepa;*/
+  border-spacing: 0;
   // Fix FireFox table in flex bug
   // defaults to max content which makes the first row in tbody grow out of proportion
   // and overlap with the thead. Problem only occurs if there's only -1- row in tbody ¯\_(ツ)_/¯
   height: min-content;
+  position: relative;
 
   thead {
     background: #3A3F44;
+    position: sticky;
+    top: 0;
 
     tr {
       height: 40px;
@@ -17,6 +21,9 @@
   }
 
   tbody {
+    max-height: 100px;
+    overflow-y: auto;
+
     tr {
       height: 32px;
     }
@@ -25,7 +32,7 @@
   tr {
 
     th, td {
-      border: 2px solid #aaa;
+      border: 1px solid #aaa;
       padding: 8px;
     }
   }

@@ -1,0 +1,16 @@
+﻿input:not(.select2-search__field,[type="submit"], [type="reset"], [type="button"]) {
+  padding: 12px;
+  border-radius: 4px;
+  color: $bodyTextColor;
+  border: 2px solid $lightColor;
+  background: $darkColor;
+  font-size: 16px;
+  line-height: 1.125; //18px
+
+  &:focus {
+    color: $bodyTextColor;
+    border-color: $lightHoverColor;
+    background: $darkHoverColor;
+    outline: none;
+  }
+}

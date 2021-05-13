@@ -2,90 +2,72 @@
 @{
     ViewData["Title"] = "Create";
 }
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Race" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Race"
-                        asp-items="Html.GetEnumSelectList<WowRace>()">
-                </select>
-                <span asp-validation-for="Race" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Class" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Class"
-                        asp-items="Html.GetEnumSelectList<WowClass>()">
-                </select>
-                <span asp-validation-for="Class" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Spec" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Spec"
-                        asp-items="Html.GetEnumSelectList<WowSpec>()">
-                </select>
-                <span asp-validation-for="Spec" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Role"
-                        asp-items="Html.GetEnumSelectList<WowSpecRole>()">
-                </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rank" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Rank"
-                        asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
-                </select>
-                <span asp-validation-for="Rank" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Profession1" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Profession1"
-                        asp-items="Html.GetEnumSelectList<WowProfession>()">
-                </select>
-                <span asp-validation-for="Profession1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Profession2" class="control-label"></label>
-                <select class="form-control"
-                        asp-for="Profession2"
-                        asp-items="Html.GetEnumSelectList<WowProfession>()">
-                </select>
-                <span asp-validation-for="Profession2" class="text-danger"></span>
-            </div>
-            @*<input type="checkbox" asp-for="IsAlt" />
+<form asp-action="Create">
+    <section asp-validation-summary="ModelOnly" class="validation__error">
+
+        <label asp-for="Name" class="control-label"></label>
+        <input placeholder="Name" asp-for="Name"/>
+        <span asp-validation-for="Name" class="validation__error"></span>
+
+        <label asp-for="Race" class="control-label"></label>
+        <select class="select--search"
+                asp-for="Race"
+                asp-items="Html.GetEnumSelectList<WowRace>()">
+        </select>
+        <span asp-validation-for="Race" class="validation__error"></span>
+
+        <label asp-for="Class" class="control-label"></label>
+        <select class="select--search"
+                asp-for="Class"
+                asp-items="Html.GetEnumSelectList<WowClass>()">
+        </select>
+        <span asp-validation-for="Class" class="validation__error"></span>
+
+        <label asp-for="Spec" class="control-label"></label>
+        <select class="select--search"
+                asp-for="Spec"
+                asp-items="Html.GetEnumSelectList<WowSpec>()">
+        </select>
+        <span asp-validation-for="Spec" class="validation__error"></span>
+
+        <label asp-for="Role" class="control-label"></label>
+        <select asp-for="Role"
+                asp-items="Html.GetEnumSelectList<WowSpecRole>()">
+        </select>
+        <span asp-validation-for="Role" class="validation__error"></span>
+
+        <label asp-for="Rank" class="control-label"></label>
+        <select asp-for="Rank"
+                asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
+        </select>
+        <span asp-validation-for="Rank" class="validation__error"></span>
+
+        <label asp-for="Profession1" class="control-label"></label>
+        <select class="select--search"
+                asp-for="Profession1"
+                asp-items="Html.GetEnumSelectList<WowProfession>()">
+        </select>
+        <span asp-validation-for="Profession1" class="validation__error"></span>
+
+        <label asp-for="Profession2" class="control-label"></label>
+        <select class="select--search"
+                asp-for="Profession2"
+                asp-items="Html.GetEnumSelectList<WowProfession>()">
+        </select>
+        <span asp-validation-for="Profession2" class="validation__error"></span>
+        @*<input type="checkbox" asp-for="IsAlt" />
             @if (Model.IsAlt)
             {
-                <div class="form-group">
+
                     <label asp-for="MainId" class="control-label"></label>
-                    <input asp-for="Main" class="form-control" />
-                </div>
+                    <input asp-for="Main"/>
+
             }*@
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </section>
+</form>
+<a asp-action="Index">Back to List</a>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

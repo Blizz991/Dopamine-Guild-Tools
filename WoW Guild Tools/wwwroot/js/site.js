@@ -12,10 +12,27 @@ for (i = 0; i < coll.length; i++) {
         }
     });
 
-    //Uncollapse is there's an active element within the collapse
-    //TODO: swap to using active?
+    // Uncollapse if there's an active element within the collapse
+    // TODO: swap to using active?
     if (coll[i].classList.contains("collapsible--shown")) {
         var content = coll[i].nextElementSibling;
         content.style.maxHeight = content.scrollHeight + "px";
     }
 }
+
+
+// Library / Framework specific
+$(document).ready(function () {
+    $('select').select2({
+        minimumResultsForSearch: Infinity,
+        dropdownAutoWidth: true,
+        theme: 'slate',
+        //placeholder: {
+        //    id: '0', // the value of the option
+        //    text: 'Select an option'
+        //}
+    });
+    $(".select--search").select2({
+        theme: 'slate',
+    });
+});
