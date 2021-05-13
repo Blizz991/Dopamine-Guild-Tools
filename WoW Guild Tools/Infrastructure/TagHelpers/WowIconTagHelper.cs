@@ -10,7 +10,7 @@ using WoW_Guild_Tools.Models.Enums;
 
 namespace WoW_Guild_Tools.Infrastructure.TagHelpers
 {
-    [HtmlTargetElement("i", Attributes = "wow-*")]
+    [HtmlTargetElement("i", Attributes = "wow-class")]
     public class WowIconTagHelper : TagHelper
     {
         [ViewContext]
@@ -21,13 +21,21 @@ namespace WoW_Guild_Tools.Infrastructure.TagHelpers
         [HtmlAttributeName("wow-spec")]
         public WowSpec WowSpec { get; set; }
 
-        // Expected output: "wow-icon__class--spec" example: "wow-icon__paladin--retribution"
+        // Expected output: "<i class="wow-icon__class--spec"></i> example: <i class="wow-icon__paladin--retribution"></i>
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (output != null)
             {
                 TagBuilder iconTag = new TagBuilder("i");
 
+                // Create Class Icon
+                if (output.Attributes.ContainsName(nameof(WowClass)) && !output.Attributes.ContainsName(nameof(WowSpec)))
+                {
+                    iconTag.AddCssClass(WowClass.ToString().CreateSlug());
+                }
+                
+
+                // Create Spec Icon
 
 
                 output.Content.AppendHtml(iconTag);

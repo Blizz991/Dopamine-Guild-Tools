@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WoW Guild Tools</title>
+    <link rel="stylesheet" href="~/lib/select2/css/select2.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -66,8 +67,9 @@
         </ul>
 
     </footer>
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    @* Jquery is required for select2 and the built in frontend validation from Entity Framework *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/select2/js/select2.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
