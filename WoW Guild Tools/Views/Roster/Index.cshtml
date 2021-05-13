@@ -45,46 +45,48 @@
                         <th>Options</th>
                     </tr>
                 </thead>
+                as
                 <tbody>
                     @foreach (var item in Model.Where(r => r.IsAlt == false))
                     {
                         var wowClassClassName = @item.Class.ToString().ToWowClassCssClass();
-        <tr>
-            <td class="@wowClassClassName">
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Race)
-            </td>
-            <td class="@wowClassClassName">
-                @Html.DisplayFor(modelItem => item.Class)
-            </td>
-            @*<td class="@wowClassClassName">
-                    @Html.DisplayFor(modelItem => item.Spec)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rank)
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Main.Name)
-                </td>*@
-            <td>
-                <div class="roster__options">
-                    <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" aria-label="Edit"></a>
-                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                    <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
-                </div>
-            </td>
-        </tr>}
+                    <tr>
+                        <td class="@wowClassClassName">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Race)
+                        </td>
+                        <td class="@wowClassClassName">
+                            @Html.DisplayFor(modelItem => item.Class)
+                        </td>
+                        @*<td class="@wowClassClassName">
+                                @Html.DisplayFor(modelItem => item.Spec)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Profession1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Profession2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rank)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Main.Name)
+                            </td>*@
+                        <td>
+                            <div class="roster__options">
+                                <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" aria-label="Edit"></a>
+                                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                                <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
+                            </div>
+                        </td>
+                    </tr>
+}
                 </tbody>
             </table>
         </article>
@@ -108,13 +110,14 @@
 
                     @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Tank))
                     {
-        <tbody>
-            <tr>
-                <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
-                <td>@mainTanks </td>
-                <td>@altTanks</td>
-            </tr>
-        </tbody>}
+                    <tbody>
+                        <tr>
+                            <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
+                            <td>@mainTanks </td>
+                            <td>@altTanks</td>
+                        </tr>
+                    </tbody>
+}
                 </table>
                 <table class="table">
                     <thead>
@@ -129,13 +132,14 @@
 
                     @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Healer))
                     {
-        <tbody>
-            <tr>
-                <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
-                <td>@mainHealers </td>
-                <td>@altHealers</td>
-            </tr>
-        </tbody>}
+                    <tbody>
+                        <tr>
+                            <td class="@item.Class.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Class)</td>
+                            <td>@mainHealers </td>
+                            <td>@altHealers</td>
+                        </tr>
+                    </tbody>
+}
                 </table>
                 <table class="table">
                     <thead>
@@ -152,13 +156,14 @@
                     {
                         var wowClass = Html.DisplayFor(modelItem => item.Class);
 
-        <tbody>
-            <tr>
-                <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
-                <td>@mainMeleeCount </td>
-                <td>@altMeleeCount</td>
-            </tr>
-        </tbody>}
+                    <tbody>
+                        <tr>
+                            <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
+                            <td>@mainMeleeCount </td>
+                            <td>@altMeleeCount</td>
+                        </tr>
+                    </tbody>
+}
                 </table>
                 <table class="table">
                     <thead>
@@ -175,13 +180,14 @@
                     {
                         var wowClass = Html.DisplayFor(modelItem => item.Class);
 
-        <tbody>
-            <tr>
-                <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
-                <td>@mainRangedCount </td>
-                <td>@altRangedCount</td>
-            </tr>
-        </tbody>}
+                    <tbody>
+                        <tr>
+                            <td class="@item.Class.ToString().ToWowClassCssClass()">@wowClass</td>
+                            <td>@mainRangedCount </td>
+                            <td>@altRangedCount</td>
+                        </tr>
+                    </tbody>
+}
                 </table>
             </article>
         </article>

@@ -35,4 +35,9 @@ $(document).ready(function () {
     $(".select--search").select2({
         theme: 'slate',
     });
+
+    //new Sortable(sortabletest, {
+    //    animation: 150,
+    //    ghostClass: 'blue-background-class'
+    //});
 });
