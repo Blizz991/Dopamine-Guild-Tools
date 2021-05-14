@@ -876,7 +876,7 @@ body:not(div.wowhead-tooltip) a:not(.button) {
 .button,
 [type="submit"],
 [type="reset"],
-[type="button"]:not(.trigger):not(.collapsible__trigger) {
+[type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next) {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -908,7 +908,7 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   .button:hover,
   [type="submit"]:hover,
   [type="reset"]:hover,
-  [type="button"]:not(.trigger):not(.collapsible__trigger):hover {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next):hover {
     background: #2E3236;
     color: #fff;
     border: 1px solid #3A3F44; }
@@ -917,8 +917,8 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   [type="submit"] .disabled,
   [type="reset"][disabled],
   [type="reset"] .disabled,
-  [type="button"]:not(.trigger):not(.collapsible__trigger)[disabled],
-  [type="button"]:not(.trigger):not(.collapsible__trigger) .disabled {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next)[disabled],
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next) .disabled {
     color: #fff !important;
     border-color: #fff !important;
     /*background-color: $gray-800 !important;*/
@@ -927,14 +927,14 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   .button.icon-button,
   [type="submit"].icon-button,
   [type="reset"].icon-button,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).icon-button {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).icon-button {
     /*border-radius: 50%;*/
     padding: 8px;
     width: 32px; }
     .button.icon-button:before,
     [type="submit"].icon-button:before,
     [type="reset"].icon-button:before,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).icon-button:before {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).icon-button:before {
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -956,12 +956,12 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   .button.button--icon,
   [type="submit"].button--icon,
   [type="reset"].button--icon,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--icon {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--icon {
     padding-right: 40px; }
     .button.button--icon:before,
     [type="submit"].button--icon:before,
     [type="reset"].button--icon:before,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--icon:before {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--icon:before {
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -985,98 +985,98 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   .button.button--secondary,
   [type="submit"].button--secondary,
   [type="reset"].button--secondary,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--secondary {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--secondary {
     background: #7A8288;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--secondary:hover,
     [type="submit"].button--secondary:hover,
     [type="reset"].button--secondary:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--secondary:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--secondary:hover {
       background: #6E757B;
       color: #fff;
       border: 1px solid #7A8288; }
   .button.button--success,
   [type="submit"].button--success,
   [type="reset"].button--success,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--success {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--success {
     background: #62C462;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--success:hover,
     [type="submit"].button--success:hover,
     [type="reset"].button--success:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--success:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--success:hover {
       background: #4FBD4F;
       color: #fff;
       border: 1px solid #62C462; }
   .button.button--info,
   [type="submit"].button--info,
   [type="reset"].button--info,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--info {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--info {
     background: #5BC0DE;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--info:hover,
     [type="submit"].button--info:hover,
     [type="reset"].button--info:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--info:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--info:hover {
       background: #46B8DA;
       color: #fff;
       border: 1px solid #5BC0DE; }
   .button.button--warning,
   [type="submit"].button--warning,
   [type="reset"].button--warning,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--warning {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--warning {
     background: #F89406;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--warning:hover,
     [type="submit"].button--warning:hover,
     [type="reset"].button--warning:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--warning:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--warning:hover {
       background: #DF8505;
       color: #fff;
       border: 1px solid #F89406; }
   .button.button--danger,
   [type="submit"].button--danger,
   [type="reset"].button--danger,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--danger {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--danger {
     background: #EE5F5B;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--danger:hover,
     [type="submit"].button--danger:hover,
     [type="reset"].button--danger:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--danger:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--danger:hover {
       background: #EC4844;
       color: #fff;
       border: 1px solid #EE5F5B; }
   .button.button--light,
   [type="submit"].button--light,
   [type="reset"].button--light,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--light {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--light {
     background: #E9ECEF;
     color: #272B30;
     border: 1px solid transparent; }
     .button.button--light:hover,
     [type="submit"].button--light:hover,
     [type="reset"].button--light:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--light:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--light:hover {
       background: #DADFE4;
       color: #1C1E22;
       border: 1px solid #E9ECEF; }
   .button.button--dark,
   [type="submit"].button--dark,
   [type="reset"].button--dark,
-  [type="button"]:not(.trigger):not(.collapsible__trigger).button--dark {
+  [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--dark {
     background: #272B30;
     color: #E9ECEF;
     border: 1px solid transparent; }
     .button.button--dark:hover,
     [type="submit"].button--dark:hover,
     [type="reset"].button--dark:hover,
-    [type="button"]:not(.trigger):not(.collapsible__trigger).button--dark:hover {
+    [type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next).button--dark:hover {
       background: #1C1E22;
       color: #fff;
       border: 1px solid #272B30; }
@@ -1553,6 +1553,38 @@ select + {
     padding: 12px 16px; }
   .main-nav__icon {
     margin-right: 8px; }
+
+.xdsoft_datetimepicker.xdsoft_dark {
+  background: #3A3F44;
+  box-shadow: none; }
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option {
+  background: #3A3F44; }
+
+.xdsoft_dark .xdsoft_scrollbar > .xdsoft_scroller {
+  background: #1C1E22; }
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: #1C1E22;
+  color: #DADFE4;
+  box-shadow: #DADFE4 0 1px 3px 0 inset; }
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today {
+  color: #5BC0DE; }
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td:hover, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div:hover,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {
+  background: #2E3236 !important;
+  color: #DADFE4 !important;
+  box-shadow: #DADFE4 0 1px 3px 0 inset !important; }
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {
+  background: #272B30;
+  color: #E9ECEF; }
 
 .modal {
   position: absolute;

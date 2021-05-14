@@ -24,7 +24,7 @@
 .button,
 [type="submit"],
 [type="reset"],
-[type="button"]:not(.trigger):not(.collapsible__trigger) {
+[type="button"]:not(.trigger, .collapsible__trigger, .xdsoft_prev, .xdsoft_today_button, .xdsoft_next) {
   @include text-button;
   text-align: center;
   display: inline-flex;

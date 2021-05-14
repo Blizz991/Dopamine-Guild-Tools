@@ -1,0 +1,44 @@
+﻿.xdsoft_datetimepicker.xdsoft_dark {
+  background: $primaryColor;
+  box-shadow: none;
+}
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option {
+  background: $primaryColor;
+}
+
+.xdsoft_scrollbar {
+
+}
+
+.xdsoft_dark .xdsoft_scrollbar > .xdsoft_scroller {
+  background: $darkHoverColor;
+}
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: $darkHoverColor;
+  color: $lightHoverColor;
+  box-shadow: $lightHoverColor 0 1px 3px 0 inset;
+}
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today {
+  color: $infoColor;
+}
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td:hover, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div:hover,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover,
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {
+  background: $primaryHoverColor !important;
+  color: $lightHoverColor !important;
+  box-shadow: $lightHoverColor 0 1px 3px 0 inset !important;
+}
+
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar {
+  td, th {
+    background: $darkColor;
+    color: $lightColor;
+  }
+}
