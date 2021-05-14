@@ -16,11 +16,15 @@ namespace WoW_Guild_Tools.Data
         {
         }
         public DbSet<Raider> Raiders { get; set; }
+        public DbSet<RaidGroup> RaidGroups { get; set; }
+        public DbSet<GroupRaider> GroupRaiders { get; set; }
 
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+
+        }
     }
 }
