@@ -40,4 +40,12 @@ $(document).ready(function () {
     //    animation: 150,
     //    ghostClass: 'blue-background-class'
     //});
+
+    jQuery('#raidGroupDateTimePicker').datetimepicker({
+        inline: true,
+        format: 'D d. M - Y',
+        minDate: 0, // today
+        theme: 'dark',
+        timepicker: false
+    });
 });
