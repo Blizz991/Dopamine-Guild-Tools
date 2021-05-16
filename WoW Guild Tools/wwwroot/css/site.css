@@ -357,6 +357,11 @@ body {
     grid-template-rows: auto 1fr;
     padding: 16px 32px 32px 0; }
 
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
 h1 {
   font-family: "Lato", sans-serif;
   font-style: normal;
@@ -452,6 +457,32 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   text-decoration: none;
   outline: 0; }
 
+.text--info {
+  color: #5BC0DE; }
+
+.text--warning {
+  color: #F89406; }
+
+.text--danger {
+  color: #EE5F5B; }
+
+.text--success {
+  color: #62C462; }
+
+/*$classSpecIconSizes: (
+  56,
+  32,
+  16
+);
+
+$classSpecBackgroundUrls: (
+  '~/images/classic-classes-specs-56.jpg',
+  '~/images/classic-classes-specs-32.jpg',
+  '~/images/classic-classes-specs-16.jpg'
+);*/
+/*$classSpecBackgroundUrl56: url('../images/classic-classes-specs-56.jpg');
+$classSpecBackgroundUrl32: url('../images/classic-classes-specs-32.jpg');
+$classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
 .wow-icon__druid {
   display: block;
   width: 56px;
@@ -459,6 +490,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: 0px;
   background-position-y: 0px; }
+  .wow-icon__druid--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__druid--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: 0px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__druid--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__druid--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: 0px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__druid--balance {
     display: block;
     width: 56px;
@@ -466,13 +529,75 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: 0px;
     background-position-y: -56px; }
-  .wow-icon__druid--feral {
+    .wow-icon__druid--balance--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__druid--balance--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__druid--balance--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__druid--balance--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
+  .wow-icon__druid--feralcombat {
     display: block;
     width: 56px;
     height: 56px;
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: 0px;
     background-position-y: -112px; }
+    .wow-icon__druid--feralcombat--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__druid--feralcombat--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__druid--feralcombat--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__druid--feralcombat--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__druid--restoration {
     display: block;
     width: 56px;
@@ -480,6 +605,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: 0px;
     background-position-y: -168px; }
+    .wow-icon__druid--restoration--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__druid--restoration--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__druid--restoration--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__druid--restoration--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: 0px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__hunter {
   display: block;
@@ -488,6 +644,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -56px;
   background-position-y: 0px; }
+  .wow-icon__hunter--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__hunter--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -56px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__hunter--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__hunter--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -56px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__hunter--beastmastery {
     display: block;
     width: 56px;
@@ -495,6 +683,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -56px;
     background-position-y: -56px; }
+    .wow-icon__hunter--beastmastery--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__hunter--beastmastery--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__hunter--beastmastery--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__hunter--beastmastery--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__hunter--marksmanship {
     display: block;
     width: 56px;
@@ -502,6 +721,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -56px;
     background-position-y: -112px; }
+    .wow-icon__hunter--marksmanship--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__hunter--marksmanship--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__hunter--marksmanship--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__hunter--marksmanship--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__hunter--survival {
     display: block;
     width: 56px;
@@ -509,6 +759,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -56px;
     background-position-y: -168px; }
+    .wow-icon__hunter--survival--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__hunter--survival--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__hunter--survival--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__hunter--survival--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -56px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__mage {
   display: block;
@@ -517,6 +798,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -112px;
   background-position-y: 0px; }
+  .wow-icon__mage--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__mage--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -112px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__mage--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__mage--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -112px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__mage--arcane {
     display: block;
     width: 56px;
@@ -524,6 +837,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -112px;
     background-position-y: -56px; }
+    .wow-icon__mage--arcane--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__mage--arcane--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__mage--arcane--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__mage--arcane--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__mage--fire {
     display: block;
     width: 56px;
@@ -531,6 +875,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -112px;
     background-position-y: -112px; }
+    .wow-icon__mage--fire--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__mage--fire--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__mage--fire--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__mage--fire--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__mage--frost {
     display: block;
     width: 56px;
@@ -538,6 +913,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -112px;
     background-position-y: -168px; }
+    .wow-icon__mage--frost--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__mage--frost--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__mage--frost--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__mage--frost--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -112px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__paladin {
   display: block;
@@ -546,6 +952,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -168px;
   background-position-y: 0px; }
+  .wow-icon__paladin--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__paladin--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -168px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__paladin--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__paladin--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -168px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__paladin--holy {
     display: block;
     width: 56px;
@@ -553,6 +991,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -168px;
     background-position-y: -56px; }
+    .wow-icon__paladin--holy--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__paladin--holy--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__paladin--holy--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__paladin--holy--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__paladin--protection {
     display: block;
     width: 56px;
@@ -560,6 +1029,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -168px;
     background-position-y: -112px; }
+    .wow-icon__paladin--protection--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__paladin--protection--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__paladin--protection--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__paladin--protection--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__paladin--retribution {
     display: block;
     width: 56px;
@@ -567,6 +1067,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -168px;
     background-position-y: -168px; }
+    .wow-icon__paladin--retribution--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__paladin--retribution--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__paladin--retribution--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__paladin--retribution--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -168px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__priest {
   display: block;
@@ -575,6 +1106,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -224px;
   background-position-y: 0px; }
+  .wow-icon__priest--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__priest--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -224px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__priest--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__priest--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -224px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__priest--discipline {
     display: block;
     width: 56px;
@@ -582,6 +1145,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -224px;
     background-position-y: -56px; }
+    .wow-icon__priest--discipline--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__priest--discipline--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__priest--discipline--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__priest--discipline--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__priest--holy {
     display: block;
     width: 56px;
@@ -589,6 +1183,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -224px;
     background-position-y: -112px; }
+    .wow-icon__priest--holy--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__priest--holy--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__priest--holy--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__priest--holy--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__priest--shadow {
     display: block;
     width: 56px;
@@ -596,6 +1221,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -224px;
     background-position-y: -168px; }
+    .wow-icon__priest--shadow--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__priest--shadow--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__priest--shadow--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__priest--shadow--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -224px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__rogue {
   display: block;
@@ -604,6 +1260,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -280px;
   background-position-y: 0px; }
+  .wow-icon__rogue--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__rogue--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -280px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__rogue--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__rogue--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -280px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__rogue--assassination {
     display: block;
     width: 56px;
@@ -611,6 +1299,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -280px;
     background-position-y: -56px; }
+    .wow-icon__rogue--assassination--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__rogue--assassination--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__rogue--assassination--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__rogue--assassination--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__rogue--combat {
     display: block;
     width: 56px;
@@ -618,6 +1337,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -280px;
     background-position-y: -112px; }
+    .wow-icon__rogue--combat--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__rogue--combat--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__rogue--combat--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__rogue--combat--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__rogue--sublety {
     display: block;
     width: 56px;
@@ -625,6 +1375,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -280px;
     background-position-y: -168px; }
+    .wow-icon__rogue--sublety--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__rogue--sublety--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__rogue--sublety--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__rogue--sublety--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -280px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__shaman {
   display: block;
@@ -633,6 +1414,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -336px;
   background-position-y: 0px; }
+  .wow-icon__shaman--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__shaman--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -336px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__shaman--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__shaman--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -336px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__shaman--elemental {
     display: block;
     width: 56px;
@@ -640,6 +1453,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -336px;
     background-position-y: -56px; }
+    .wow-icon__shaman--elemental--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__shaman--elemental--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__shaman--elemental--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__shaman--elemental--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__shaman--enhancement {
     display: block;
     width: 56px;
@@ -647,6 +1491,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -336px;
     background-position-y: -112px; }
+    .wow-icon__shaman--enhancement--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__shaman--enhancement--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__shaman--enhancement--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__shaman--enhancement--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__shaman--restoration {
     display: block;
     width: 56px;
@@ -654,6 +1529,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -336px;
     background-position-y: -168px; }
+    .wow-icon__shaman--restoration--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__shaman--restoration--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__shaman--restoration--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__shaman--restoration--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -336px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__warlock {
   display: block;
@@ -662,6 +1568,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -392px;
   background-position-y: 0px; }
+  .wow-icon__warlock--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__warlock--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -392px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__warlock--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__warlock--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -392px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__warlock--affliction {
     display: block;
     width: 56px;
@@ -669,6 +1607,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -392px;
     background-position-y: -56px; }
+    .wow-icon__warlock--affliction--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warlock--affliction--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warlock--affliction--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warlock--affliction--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__warlock--demonology {
     display: block;
     width: 56px;
@@ -676,6 +1645,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -392px;
     background-position-y: -112px; }
+    .wow-icon__warlock--demonology--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warlock--demonology--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warlock--demonology--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warlock--demonology--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__warlock--destruction {
     display: block;
     width: 56px;
@@ -683,6 +1683,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -392px;
     background-position-y: -168px; }
+    .wow-icon__warlock--destruction--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warlock--destruction--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warlock--destruction--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warlock--destruction--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -392px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__warrior {
   display: block;
@@ -691,6 +1722,38 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
   background-position-x: -448px;
   background-position-y: 0px; }
+  .wow-icon__warrior--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__warrior--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -448px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__warrior--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__warrior--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+      background-position-x: -448px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
   .wow-icon__warrior--arms {
     display: block;
     width: 56px;
@@ -698,6 +1761,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -448px;
     background-position-y: -56px; }
+    .wow-icon__warrior--arms--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warrior--arms--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warrior--arms--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warrior--arms--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__warrior--fury {
     display: block;
     width: 56px;
@@ -705,6 +1799,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -448px;
     background-position-y: -112px; }
+    .wow-icon__warrior--fury--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warrior--fury--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warrior--fury--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warrior--fury--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
   .wow-icon__warrior--protection {
     display: block;
     width: 56px;
@@ -712,6 +1837,37 @@ body:not(div.wowhead-tooltip) a:not(.button) {
     background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
     background-position-x: -448px;
     background-position-y: -168px; }
+    .wow-icon__warrior--protection--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__warrior--protection--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__warrior--protection--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__warrior--protection--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+        background-position-x: -448px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
 
 .wow-icon__raid-marker--moon {
   display: block;
@@ -1089,9 +2245,12 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   .table thead {
     background: #3A3F44;
     position: sticky;
-    top: 0; }
+    top: 0;
+    z-index: 2; }
     .table thead tr {
       height: 40px; }
+    .table thead th.sortable {
+      cursor: pointer; }
   .table tbody {
     max-height: 100px;
     overflow-y: auto; }
@@ -1111,7 +2270,9 @@ input:not(.select2-search__field, [type="submit"], [type="reset"], [type="button
   border: 2px solid #E9ECEF;
   background: #272B30;
   font-size: 16px;
-  line-height: 1.125; }
+  line-height: 1.125;
+  width: 200px;
+  height: 46px; }
   input:not(.select2-search__field, [type="submit"], [type="reset"], [type="button"]):focus {
     color: #CCC;
     border-color: #DADFE4;
@@ -1136,6 +2297,9 @@ Origin: https://codepen.io/350d/pen/YEPBEW
 
 .select2-container--slate .select2-container--focus .select2-selection--multiple {
   border: 1px solid #E9ECEF; }
+
+.select2-container--slate .select2-results__option {
+  border-bottom: 1px solid #E9ECEF; }
 
 .select2-container--slate .select2-results__option--highlighted[aria-selected] {
   background: #1C1E22 !important;
@@ -1221,6 +2385,9 @@ Origin: https://codepen.io/350d/pen/YEPBEW
 .select2-results {
   padding: 0 0 0 0px;
   margin: 4px 0px 0px 0; }
+  .select2-results__options {
+    max-height: 240px;
+    overflow-y: auto; }
   .select2-results .select2-highlighted {
     background: #E9ECEF;
     color: #CCC;
@@ -1332,6 +2499,15 @@ select + {
       margin-left: 6px;
       float: right; }
 
+/*.validation {
+  &__error {
+    height: 18px;
+  }
+}*/
+.field-validation-error {
+  display: block;
+  color: #EE5F5B; }
+
 .wow-color--default-channel {
   color: #FEC1C0; }
 
@@ -1390,11 +2566,17 @@ select + {
 .death-knight-bg {
   background-color: #c41f3b !important; }
 
+.death-knight-border {
+  border-color: #c41f3b !important; }
+
 .demon-hunter-text {
   color: #a330c9; }
 
 .demon-hunter-bg {
   background-color: #a330c9 !important; }
+
+.demon-hunter-border {
+  border-color: #a330c9 !important; }
 
 .druid-text {
   color: #ff7d0a; }
@@ -1402,11 +2584,17 @@ select + {
 .druid-bg {
   background-color: #ff7d0a !important; }
 
+.druid-border {
+  border-color: #ff7d0a !important; }
+
 .hunter-text {
   color: #abd473; }
 
 .hunter-bg {
   background-color: #abd473 !important; }
+
+.hunter-border {
+  border-color: #abd473 !important; }
 
 .mage-text {
   color: #69ccf0; }
@@ -1414,11 +2602,17 @@ select + {
 .mage-bg {
   background-color: #69ccf0 !important; }
 
+.mage-border {
+  border-color: #69ccf0 !important; }
+
 .monk-text {
   color: #00ff96; }
 
 .monk-bg {
   background-color: #00ff96 !important; }
+
+.monk-border {
+  border-color: #00ff96 !important; }
 
 .paladin-text {
   color: #f58cba; }
@@ -1426,11 +2620,17 @@ select + {
 .paladin-bg {
   background-color: #f58cba !important; }
 
+.paladin-border {
+  border-color: #f58cba !important; }
+
 .priest-text {
   color: #ffffff; }
 
 .priest-bg {
   background-color: #ffffff !important; }
+
+.priest-border {
+  border-color: #ffffff !important; }
 
 .rogue-text {
   color: #fff569; }
@@ -1438,11 +2638,17 @@ select + {
 .rogue-bg {
   background-color: #fff569 !important; }
 
+.rogue-border {
+  border-color: #fff569 !important; }
+
 .shaman-text {
   color: #0070de; }
 
 .shaman-bg {
   background-color: #0070de !important; }
+
+.shaman-border {
+  border-color: #0070de !important; }
 
 .warlock-text {
   color: #9482c9; }
@@ -1450,11 +2656,17 @@ select + {
 .warlock-bg {
   background-color: #9482c9 !important; }
 
+.warlock-border {
+  border-color: #9482c9 !important; }
+
 .warrior-text {
   color: #c79c6e; }
 
 .warrior-bg {
   background-color: #c79c6e !important; }
+
+.warrior-border {
+  border-color: #c79c6e !important; }
 
 /* #endregion Class Colors*/
 .faction--alliance {
@@ -1523,12 +2735,32 @@ select + {
   .item__quality--wow-token:hover {
     color: #00ccff; }
 
+/*Raid Groups*/
+.role__raider {
+  grid-column: auto/span 1;
+  display: flex;
+  width: 120px;
+  height: 32px;
+  border: 2px solid;
+  display: flex;
+  justify-content: space-between;
+  background: #1C1E22;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto 0 auto auto;
+  cursor: grab;
+  user-select: none; }
+  .role__raider:nth-of-type(2n) {
+    margin: auto auto auto 0; }
+
 .main-nav {
   grid-column: auto/span 2;
   display: flex;
-  align-items: center;
+  align-items: start;
   flex: 1;
-  height: calc(100vh - 40px);
+  min-height: calc(100vh - 40px);
   background-color: #3A3F44;
   border-right: 2px solid #1C1E22; }
   .main-nav__list {
@@ -1538,7 +2770,9 @@ select + {
     flex-direction: column;
     margin: 0;
     width: 100%;
-    height: 100%; }
+    height: auto;
+    position: sticky;
+    top: 0; }
     .main-nav__list-item {
       background-color: #272B30;
       border-bottom: 2px solid #6E757B; }
@@ -1616,15 +2850,25 @@ select + {
   margin-left: auto; }
   .collapsible__state-indicator::before {
     content: 'expand_more'; }
+  .collapsible__state-indicator--round::before {
+    content: 'add_circle_outline'; }
 
 .collapsible--shown .collapsible__state-indicator::before {
   content: 'expand_less'; }
+
+.collapsible--shown .collapsible__state-indicator--round::before {
+  content: 'remove_circle_outline'; }
 
 .collapsible__list {
   background-color: #3A3F44;
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out; }
+
+.collapsible__section {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out; }
@@ -1639,10 +2883,187 @@ select + {
 .collapsible__icon {
   margin-right: 8px; }
 
+.tooltip {
+  position: relative;
+  display: inline-block; }
+  .tooltip--buff {
+    height: 36px; }
+  .tooltip img {
+    border: 2px solid; }
+    .tooltip img.missing {
+      filter: grayscale(100%); }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1; }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s;
+    width: 300px;
+    display: block;
+    position: absolute;
+    right: 50%;
+    bottom: 120%;
+    transform: translateX(50%);
+    z-index: 99;
+    background: #1C1E22;
+    /*border-radius: 4px;*/
+    border: 1px solid #E9ECEF;
+    padding: 8px;
+    /*box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.5);*/ }
+
+/*RaidGroups*/
+.raidgroup__header {
+  margin-bottom: 16px; }
+
+.raidgroup__groups {
+  display: flex;
+  flex-direction: column;
+  /*margin-bottom: 16px;*/ }
+
+.raidgroup__group {
+  display: flex;
+  flex-direction: column;
+  /*width: 120px;*/
+  margin-right: 12px; }
+  .raidgroup__group-container {
+    display: flex;
+    margin-bottom: 8px; }
+    .raidgroup__group-container:last-of-type {
+      margin-bottom: 0; }
+  .raidgroup__group-index {
+    text-align: center;
+    margin-bottom: 8px; }
+
+.raidgroup__slots {
+  background: #7A8288;
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 136px;
+  height: 196px; }
+  .raidgroup__slots .role__raider {
+    margin-bottom: 4px; }
+    .raidgroup__slots .role__raider:last-of-type {
+      margin-bottom: 0; }
+
+.raidgroup__slot {
+  background: #7A8288;
+  border-radius: 4px;
+  width: 120px;
+  height: 32px;
+  margin-bottom: 4px; }
+  .raidgroup__slot:last-of-type {
+    margin-bottom: 0; }
+
+.raidgroup__options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 176px;
+  margin: auto 8px 0 0; }
+
+.raidgroup__add-group, .raidgroup__remove-group {
+  border-radius: 50%; }
+
+.raidgroup__add-group {
+  margin-bottom: 8px; }
+  .raidgroup__add-group:before {
+    content: 'add'; }
+
+.raidgroup__remove-group:before {
+  content: 'remove'; }
+
+.raidgroup__duplicate {
+  margin-right: 16px; }
+  .raidgroup__duplicate:before {
+    content: "content_copy"; }
+
+.raidgroup__add:before {
+  content: "add"; }
+
+.roster-characters {
+  grid-column: auto/span 2; }
+  .roster-characters__role {
+    border: 1px solid #E9ECEF;
+    margin-bottom: 8px;
+    border-radius: 4px; }
+  .roster-characters__container {
+    display: flex;
+    flex-direction: column;
+    background: #1C1E22;
+    padding: 8px;
+    border: 2px solid #DADFE4; }
+  .roster-characters__title {
+    margin-bottom: 12px; }
+  .roster-characters__characters {
+    display: flex;
+    flex-direction: column; }
+
+.raids {
+  grid-column: auto/span 8; }
+  .raids__raidgroup {
+    display: flex;
+    flex-wrap: wrap; }
+    .raids__raidgroup .raidgroup__header {
+      width: 100%; }
+
+.role__collapse {
+  padding: 4px 8px; }
+  .role__collapse.collapsible--shown {
+    border-bottom: 1px solid #E9ECEF; }
+
+.role__inner-container {
+  /*padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;*/
+  padding: 8px 0;
+  z-index: 0;
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px 8px; }
+
+.raidgroup__global-buffs {
+  margin-right: 16px; }
+  .raidgroup__global-buffs:last-of-type {
+    margin-right: 0; }
+  .raidgroup__global-buffs .global-buffs__title {
+    text-align: center;
+    margin-bottom: 8px; }
+  .raidgroup__global-buffs .global-buffs__class {
+    display: flex; }
+    .raidgroup__global-buffs .global-buffs__class .tooltip {
+      margin: 0 4px 4px 0; }
+      .raidgroup__global-buffs .global-buffs__class .tooltip:last-of-type {
+        margin: 0 0 4px 0; }
+
+.roster-create {
+  grid-column: auto/span 12; }
+  .roster-create__form-line {
+    display: flex; }
+  .roster-create__form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px 16px 0; }
+    .roster-create__form-group:last-of-type {
+      margin: 0 0 16px 0; }
+    .roster-create__form-group .validation__error {
+      height: 18px; }
+  .roster-create__add-raider {
+    margin-right: 16px; }
+    .roster-create__add-raider:before {
+      content: "save"; }
+  .roster-create__cancel:before {
+    content: "close"; }
+
 .footer {
+  position: sticky;
+  bottom: 0;
   height: 40px;
   border-top: 2px solid #1C1E22;
-  padding: 8px 32px; }
+  padding: 8px 32px;
+  background: #3A3F44; }
   .footer__list {
     list-style: none;
     display: flex;
@@ -1675,6 +3096,8 @@ select + {
     text-align: center; }
   .roster__mains .table {
     width: 100%; }
+    .roster__mains .table tbody tr:hover {
+      background-color: #1C1E22; }
   .roster__alts .table {
     width: 100%; }
   .roster__header {
@@ -1694,3 +3117,16 @@ select + {
     content: "edit"; }
   .roster__btn--delete:before {
     content: "delete"; }
+
+.raid-setups {
+  z-index: 0;
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column: auto/span 12; }
+  .raid-setups__container {
+    z-index: 0;
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column: auto/span 10; }

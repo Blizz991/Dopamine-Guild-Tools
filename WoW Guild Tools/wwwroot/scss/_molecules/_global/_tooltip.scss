@@ -1,0 +1,39 @@
+﻿.tooltip {
+  position: relative;
+  display: inline-block;
+
+  &--buff {
+    height: 36px;
+  }
+
+  img {
+    border: 2px solid;
+
+    &.missing {
+      filter: grayscale(100%);
+    }
+  }
+
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  & .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s;
+    width: 300px;
+    display: block;
+    position: absolute;
+    right: 50%;
+    bottom: 120%;
+    transform: translateX(50%);
+    z-index: 99;
+    background: $darkHoverColor;
+    /*border-radius: 4px;*/
+    border: 1px solid $lightColor;
+    padding: 8px;
+    /*box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.5);*/
+  }
+}

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WoW_Guild_Tools.Data;
 using WoW_Guild_Tools.Models;
+using WoW_Guild_Tools.Models.Enums;
+using WoW_Guild_Tools.Models.ViewModels;
 
 namespace WoW_Guild_Tools.Controllers
 {
@@ -44,9 +46,79 @@ namespace WoW_Guild_Tools.Controllers
         }
 
         // GET: RaidGroups/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            return View(await GetRosterCharacters());
+
+            //return View(
+            //    new RosterCharacters
+            //    {
+            //        Mains = new RoleRaiders
+            //        {
+            //            Tanks = new SingleRole
+            //            {
+            //                WowSpecRole = WowSpecRole.Tank,
+            //                Raiders = new List<Raider>()
+            //                {
+            //                    new Raider
+            //                    {
+            //                        Name = "Blazzsham",
+            //                        Class = WowClass.Shaman,
+            //                        Spec = WowSpec.Elemental
+            //                    },
+            //                    new Raider
+            //                    {
+            //                        Name = "Néva",
+            //                        Class = WowClass.Paladin,
+            //                        Spec = WowSpec.Protection
+            //                    }
+            //                }
+            //            },
+            //            Healers = new SingleRole
+            //            {
+            //                WowSpecRole = WowSpecRole.Healer,
+            //                Raiders = new List<Raider>()
+            //                {
+            //                    new Raider
+            //                    {
+            //                        Name = "Asd",
+            //                        Class = WowClass.Shaman,
+            //                        Spec = WowSpec.Elemental
+            //                    },
+            //                    new Raider
+            //                    {
+            //                        Name = "Néva",
+            //                        Class = WowClass.Paladin,
+            //                        Spec = WowSpec.Protection
+            //                    }
+            //                }
+            //            }
+            //        },
+            //        Alts = new RoleRaiders
+            //        {
+            //            Tanks = new SingleRole
+            //            {
+            //                WowSpecRole = WowSpecRole.Tank,
+            //                Raiders = new List<Raider>()
+            //                {
+            //                    new Raider
+            //                    {
+            //                        Name = "Blazzsham",
+            //                        Class = WowClass.Shaman,
+            //                        Spec = WowSpec.Elemental
+            //                    },
+            //                    new Raider
+            //                    {
+            //                        Name = "Néva",
+            //                        Class = WowClass.Paladin,
+            //                        Spec = WowSpec.Protection
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }
+            //);
+            //return View();
         }
 
         // POST: RaidGroups/Create
@@ -148,6 +220,63 @@ namespace WoW_Guild_Tools.Controllers
         private bool RaidGroupExists(int id)
         {
             return _context.RaidGroups.Any(e => e.Id == id);
+        }
+
+        private async Task<RosterCharacters> GetRosterCharacters()
+        {
+            List<Raider> allRaiders = await _context.Raiders.ToListAsync();
+
+            RosterCharacters rosterCharacters = new RosterCharacters
+            {
+                Mains = new RoleRaiders
+                {
+                    Tanks = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Tank,
+                        Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Tank).ToList()
+                    },
+                    Healers = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Healer,
+                        Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Healer).ToList()
+                    },
+                    Melee = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Melee,
+                        Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Melee).ToList()
+                    },
+                    Ranged = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Ranged,
+                        Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Ranged).ToList()
+                    }
+                },
+                Alts = new RoleRaiders
+                {
+                    Tanks = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Tank,
+                        Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Tank).ToList()
+                    },
+                    Healers = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Healer,
+                        Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Healer).ToList()
+                    },
+                    Melee = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Melee,
+                        Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Melee).ToList()
+                    },
+                    Ranged = new SingleRole
+                    {
+                        WowSpecRole = WowSpecRole.Ranged,
+                        Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Ranged).ToList()
+                    }
+                },
+            };
+
+            return rosterCharacters;
         }
     }
 }

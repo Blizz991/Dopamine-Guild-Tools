@@ -1,0 +1,20 @@
+﻿@model WoW_Guild_Tools.Models.ViewModels.RoleRaiders
+@if (Model.Tanks != null)
+{
+    await Html.RenderPartialAsync("Roster/_SingleRole", Model.Tanks);
+}
+
+@if (Model.Healers != null)
+{
+    await Html.RenderPartialAsync("Roster/_SingleRole", Model.Healers);
+}
+
+@if (Model.Melee != null)
+{
+    await Html.RenderPartialAsync("Roster/_SingleRole", Model.Melee);
+}
+
+@if (Model.Ranged != null)
+{
+    await Html.RenderPartialAsync("Roster/_SingleRole", Model.Ranged);
+}

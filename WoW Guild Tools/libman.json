@@ -15,7 +15,7 @@
     {
       "library": "jquery-datetimepicker@2.5.20",
       "destination": "wwwroot/lib/jquery-datetimerpicker",
-      "files": ["jquery.datetimepicker.full.min.js", "jquery.datetimepicker.min.css"]
+      "files": [ "jquery.datetimepicker.full.min.js", "jquery.datetimepicker.min.css" ]
     }
   ]
 }

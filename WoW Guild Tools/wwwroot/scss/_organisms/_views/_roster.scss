@@ -21,6 +21,10 @@
   &__mains {
     .table {
       width: 100%;
+
+      tbody tr:hover {
+        background-color: $darkHoverColor;
+      }
     }
   }
 

@@ -1,0 +1,26 @@
+﻿.roster-characters {
+  @include grid-column(2);
+
+  &__role {
+    border: 1px solid $lightColor;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background: $darkHoverColor;
+    padding: 8px;
+    border: 2px solid $lightHoverColor;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__characters {
+    display: flex;
+    flex-direction: column;
+  }
+}

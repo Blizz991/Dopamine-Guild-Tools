@@ -1,0 +1,28 @@
+﻿.raidgroup {
+  &__global-buffs {
+    margin-right: 16px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    .global-buffs {
+      &__title {
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      &__class {
+        display: flex;
+
+        .tooltip {
+          margin: 0 4px 4px 0;
+
+          &:last-of-type {
+            margin: 0 0 4px 0;
+          }
+        }
+      }
+    }
+  }
+}

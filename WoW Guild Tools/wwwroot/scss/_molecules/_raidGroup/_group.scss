@@ -1,0 +1,107 @@
+﻿.raidgroup {
+  &__header {
+    margin-bottom: 16px;
+  }
+
+  &__groups {
+    display: flex;
+    flex-direction: column;
+    /*margin-bottom: 16px;*/
+  }
+
+  &__group {
+    &-container {
+      display: flex;
+      margin-bottom: 8px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    /*width: 120px;*/
+    margin-right: 12px;
+
+    &-index {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__slots {
+    background: $secondaryColor;
+    border-radius: 4px;
+    padding: 8px;
+    min-width: 136px;
+    height: 196px;
+
+    .role__raider {
+      margin-bottom: 4px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__slot {
+    background: $secondaryColor;
+    border-radius: 4px;
+    width: 120px;
+    height: 32px;
+    margin-bottom: 4px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 176px; //5x group slots + 4x group slots margin
+    margin: auto 8px 0 0;
+  }
+
+  &__add-group,
+  &__remove-group {
+    border-radius: 50%;
+  }
+
+  &__add-group {
+    margin-bottom: 8px;
+
+    &:before {
+      content: 'add'
+    }
+  }
+
+  &__remove-group {
+    &:before {
+      content: 'remove'
+    }
+  }
+
+  &__global-buffs {
+  }
+
+  &__footer {
+  }
+
+  &__duplicate {
+    margin-right: 16px;
+
+    &:before {
+      content: "content_copy"
+    }
+  }
+
+  &__add {
+    &:before {
+      content: "add"
+    }
+  }
+}

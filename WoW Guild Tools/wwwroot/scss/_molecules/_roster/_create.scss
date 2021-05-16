@@ -1,0 +1,40 @@
+﻿.roster-create {
+  @include grid-column(12);
+
+  &__form-line {
+    display: flex;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px 16px 0;
+
+    &:last-of-type {
+      margin: 0 0 16px 0;
+    }
+
+
+    .validation__error {
+      height: 18px;
+    }
+  }
+
+  &__buttons {
+
+  }
+
+  &__add-raider {
+    margin-right: 16px;
+
+    &:before {
+      content: "save";
+    }
+  }
+
+  &__cancel {
+    &:before {
+      content: "close";
+    }
+  }
+}

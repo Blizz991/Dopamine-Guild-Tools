@@ -10,6 +10,7 @@ namespace WoW_Guild_Tools.Models.Enums
     {
         [Display(Name = "Select Profession")]
         Unset,
+        Unknown,
         Alchemy,
         Blacksmithing,
         Enchanting,

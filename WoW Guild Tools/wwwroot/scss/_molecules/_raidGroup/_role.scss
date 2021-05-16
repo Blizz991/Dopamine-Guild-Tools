@@ -1,0 +1,25 @@
+﻿.role {
+  &__collapse {
+    padding: 4px 8px;
+
+    &.collapsible--shown {
+      border-bottom: 1px solid $lightColor;
+    }
+  }
+
+  &__raiders {
+    
+  }
+
+  &__inner-container {
+    /*padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;*/
+    padding: 8px 0;
+    @include grid-container(2);
+    @include override-grid-gap(8px, 8px);
+  }
+
+
+}

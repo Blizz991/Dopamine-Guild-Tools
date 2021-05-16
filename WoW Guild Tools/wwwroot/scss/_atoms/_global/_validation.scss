@@ -1,0 +1,15 @@
+﻿/*.validation {
+  &__error {
+    height: 18px;
+  }
+}*/
+
+.field-validation {
+  &-error {
+    display: block;
+    color: $dangerColor;
+  }
+
+  &-valid {
+  }
+}

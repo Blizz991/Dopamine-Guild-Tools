@@ -1,0 +1,17 @@
+﻿@model WoW_Guild_Tools.Models.ViewModels.SingleRole
+<article class="roster-characters__role">
+    <button class="role__collapse collapsible__trigger">
+        <h4 class="role__name">
+            @Model.WowSpecRole
+        </h4>
+        <i class="collapsible__state-indicator collapsible__state-indicator--round material-icons"></i>
+    </button>
+    <section class="role__raiders collapsible__section">
+        <section class="role__inner-container">
+            @foreach (Raider raider in Model.Raiders)
+            {
+                await Html.RenderPartialAsync("Roster/_SingleRaider", raider);
+            }
+        </section>
+    </section>
+</article>

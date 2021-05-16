@@ -1,0 +1,27 @@
+﻿.role{
+  &__raider {
+    @include grid-column(1);
+    display: flex;
+    width: 120px;
+    height: 32px;
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    background: $darkHoverColor;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+    line-height: 16px;
+    margin: auto 0 auto auto;
+    cursor: grab;
+    user-select: none;
+    
+    &:nth-of-type(2n) {
+      margin: auto auto auto 0;
+    }
+  }
+
+  &__spec-icon{
+
+  }
+}

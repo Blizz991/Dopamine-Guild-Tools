@@ -23,6 +23,10 @@ $wowClasses: (
     &-bg {
       background-color: $wowClassColor !important;
     }
+
+    &-border {
+      border-color: $wowClassColor !important;
+    }
   }
 }
 

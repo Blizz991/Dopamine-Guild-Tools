@@ -25,6 +25,10 @@ Origin: https://codepen.io/350d/pen/YEPBEW
     border: 1px solid $lightColor;
   }
 
+  .select2-results__option {
+    border-bottom: 1px solid $lightColor;
+  }
+
   .select2-results__option--highlighted[aria-selected] {
     background: $darkHoverColor !important;
     color: $bodyTextColor;
@@ -140,6 +144,11 @@ Origin: https://codepen.io/350d/pen/YEPBEW
 .select2-results {
   padding: 0 0 0 0px;
   margin: 4px 0px 0px 0;
+
+  &__options {
+    max-height: 240px;
+    overflow-y: auto;
+  }
 
   .select2-highlighted {
     background: $lightColor;

@@ -52,3 +52,21 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   text-decoration: none;
   outline: 0;
 }
+
+.text {
+  &--info {
+    color: $infoColor;
+  }
+
+  &--warning {
+    color: $warningColor;
+  }
+
+  &--danger {
+    color: $dangerColor;
+  }
+
+  &--success {
+    color: $successColor;
+  }
+}

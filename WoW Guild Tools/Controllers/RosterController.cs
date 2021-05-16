@@ -24,7 +24,7 @@ namespace WoW_Guild_Tools.Controllers
         // GET: Roster
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Raiders.Include(r => r.Main);
+            var applicationDbContext = _context.Raiders.Include(r => r.Main).OrderBy(r => r.Class).ThenBy(r => r.Spec);
             return View(await applicationDbContext.ToListAsync());
         }
 

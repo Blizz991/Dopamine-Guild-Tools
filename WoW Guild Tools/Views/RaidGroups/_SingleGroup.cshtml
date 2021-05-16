@@ -1,0 +1,30 @@
+﻿@for (int i = 1; i <= 8; i++)
+{
+    if (i == 1 || i == 5)
+    {
+        @:<section class="raidgroup__group-container">
+        }
+
+        <section class="raidgroup__group">
+            <h4 class="raidgroup__group-index">
+                Group @i
+            </h4>
+            <section class="raidgroup__group-container">
+                <article class="raidgroup__slots">
+                </article>
+                @*<article class="raidgroup__slot">
+                    </article>
+                    <article class="raidgroup__slot">
+                    </article>
+                    <article class="raidgroup__slot">
+                    </article>
+                    <article class="raidgroup__slot">
+                    </article>*@
+            </section>
+            @if (i == 4 || i == 8)
+            {
+            @:</section>
+        }
+        </section>
+    }
+

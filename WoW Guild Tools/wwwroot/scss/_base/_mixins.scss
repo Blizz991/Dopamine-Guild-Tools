@@ -1,12 +1,4 @@
 /// <reference path="../_base/_variables.scss" />
-@mixin wow-icon($positionX, $positionY, $background, $iconSize: 56) {
-  display: block;
-  width: $iconSize + px;
-  height: $iconSize + px;
-  background: $background;
-  background-position-x: $positionX + px;
-  background-position-y: $positionY + px;
-}
 
 /*@mixin section-margin($top : $defaultSectionTopMargin, $right: $defaultSectionRightMargin, $bottom: $defaultSectionBottomMargin, $left: $defaultSectionLeftMargin) {
   margin-top: $top;

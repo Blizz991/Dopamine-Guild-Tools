@@ -1,47 +1,79 @@
-﻿@model WoW_Guild_Tools.Models.RaidGroup
+﻿@*@model WoW_Guild_Tools.Models.RaidGroup*@
+@model WoW_Guild_Tools.Models.ViewModels.RosterCharacters
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Raid Setup";
 }
 
-<h1>Create</h1>
+<form class="raid-setups" asp-action="Create">
+    <section class="raid-setups__container" asp-validation-summary="ModelOnly" class="text-danger">
+        @*<input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)*@
+        @*<label asp-for="LastUpdated" class="control-label"></label>
+            <input asp-for="LastUpdated" class="form-control" />
+            <span asp-validation-for="LastUpdated" class="text-danger"></span>*@
+        <section class="roster-characters">
+            <h2 class="roster-characters__title">Roster</h2>
+            <section class="roster-characters__container">
+                <article class="roster-characters__characters">
+                    <h3 class="roster-characters__title">Mains</h3>
+                    @if (Model.Mains != null)
+                    {
+                        await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Mains);
+                    }
+                </article>
+                <article class="roster-characters__characters">
+                    <h3 class="roster-characters__title">Alts</h3>
+                    @if (Model.Alts != null)
+                    {
+                        await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Alts);
+                    }
+                </article>
+            </section>
+        </section>
+        <section class="raids">
+            <h2 class="raids__title">Raids</h2>
+            <section class="raids__container">
+                <article class="raids__raidgroup">
+                    <header class="raidgroup__header">
+                        @*<label asp-for="Name" class="control-label"></label>
+            <input placeholder="Raid Group Name*" required asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>*@
+                    </header>
+                    <section class="raidgroup__groups">
+                        @{ await Html.RenderPartialAsync("_SingleGroup");}
+                        @*<aside class="raidgroup__options">
+                <a class="raidgroup__add-group button icon-button button--success" aria-label="Add group" asp-action="AddGroup">
+                </a>
+                <a class="raidgroup__remove-group button icon-button button--danger" aria-label="Remove group" asp-action="RemoveGroup">
+                </a>
+            </aside>*@
+                    </section>
+                    <section class="raidgroup__global-buffs">
+                        @{ await Html.RenderPartialAsync("Buffs/_RaidBuffs");}
+                    </section>
+                    <section class="raidgroup__global-buffs">
+                        @{ await Html.RenderPartialAsync("Buffs/_RaidDebuffs");}
+                    </section>
+                    @*<footer class="raidgroup__footer">
+            <a class="raidgroup__duplicate button button--success button--icon" asp-action="DuplicateRaid">
+                Duplicate raid
+            </a>
+            <a class="raidgroup__add button button--success button--icon" asp-action="AddRaid">
+                Add raid
+            </a>
+        </footer>*@
+                </article>
+            </section>
+        </section>
 
-<h4>RaidGroup</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="RaidDay" class="control-label"></label>
-                <input id="raidGroupDateTimePicker" asp-for="RaidDay" class="form-control" />
-                <span asp-validation-for="RaidDay" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastUpdated" class="control-label"></label>
-                <input asp-for="LastUpdated" class="form-control" />
-                <span asp-validation-for="LastUpdated" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+        <button type="submit" asp-action="Create" class="button button--success button--icon">
+            Publish setup
+        </button>
+    </section>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<a asp-action="Index">Back to List</a>*@
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

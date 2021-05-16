@@ -11,12 +11,16 @@
     background: #3A3F44;
     position: sticky;
     top: 0;
+    z-index: 2;
 
     tr {
       height: 40px;
     }
 
     th {
+      &.sortable {
+        cursor: pointer;
+      }
     }
   }
 

@@ -12,14 +12,26 @@
     margin-left: auto;
 
     &::before {
-      content: 'expand_more'
+      content: 'expand_more';
+    }
+
+    &--round {
+      &::before {
+        content: 'add_circle_outline';
+      }
     }
   }
 
   &--shown {
     .collapsible__state-indicator {
       &::before {
-        content: 'expand_less'
+        content: 'expand_less';
+      }
+
+      &--round {
+        &::before{
+          content: 'remove_circle_outline';
+        }
       }
     }
   }
@@ -29,6 +41,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  &__section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

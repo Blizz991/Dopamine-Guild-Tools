@@ -22,3 +22,9 @@ body {
     padding: 16px 32px 32px 0;
   }
 }
+
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

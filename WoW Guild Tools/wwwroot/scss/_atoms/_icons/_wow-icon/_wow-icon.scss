@@ -3,14 +3,80 @@
 @import "raid-marker-icons";
 @import "race-icons";
 
+@mixin wow-icon($positionX, $positionY, $backgroundUrl, $iconSize: 56) {
+  display: block;
+  width: $iconSize + px;
+  height: $iconSize + px;
+  background: $backgroundUrl;
+  background-position-x: $positionX + px;
+  background-position-y: $positionY + px;
+}
+
+@mixin wow-icon-wrapper($divideBy) {
+  display: block;
+  width: $classSpecIconSize / $divideBy + px;
+  height: $classSpecIconSize / $divideBy + px;
+  position: relative;
+}
+
+@mixin wow-icon-before($scaleBy) {
+}
+
 .wow-icon {
   @each $wowClass, $wowClassSpecs in $wowClassesSpecList {
     &__#{$wowClass} {
       @include wow-icon($classPosition, 0, $classSpecBackgroundUrl, $classSpecIconSize);
 
+      &--medium {
+        @include wow-icon-wrapper(2);
+
+        &:before {
+          @include wow-icon($classPosition, 0, $classSpecBackgroundUrl, $classSpecIconSize);
+          transform: scale(.50) translate(-50%, -50%);
+          display: block;
+          position: absolute;
+          content: "";
+        }
+      }
+
+      &--small {
+        @include wow-icon-wrapper(4);
+
+        &:before {
+          @include wow-icon($classPosition, 0, $classSpecBackgroundUrl, $classSpecIconSize);
+          transform: scale(.25) translate(-150%, -150%);
+          display: block;
+          position: absolute;
+          content: "";
+        }
+      }
+
       @each $wowClassSpec in $wowClassSpecs {
         &--#{$wowClassSpec} {
           @include wow-icon($classPosition, $specPosition, $classSpecBackgroundUrl, $classSpecIconSize);
+
+          &--medium {
+            @include wow-icon-wrapper(2);
+
+            &:before {
+              @include wow-icon($classPosition, $specPosition, $classSpecBackgroundUrl, $classSpecIconSize);
+              transform: scale(.50) translate(-50%, -50%);
+              position: absolute;
+              content: "";
+            }
+          }
+
+          &--small {
+            @include wow-icon-wrapper(4);
+
+            &:before {
+              @include wow-icon($classPosition, $specPosition, $classSpecBackgroundUrl, $classSpecIconSize);
+              transform: scale(.25) translate(-150%, -150%);
+              display: block;
+              position: absolute;
+              content: "";
+            }
+          }
         }
 
         $specPosition: $specPosition - $classSpecIconSize;
@@ -30,13 +96,14 @@
 
   @each $raceIcon in $raceIcons {
     $raceIconIndex: 1;
+
     &__race--#{$raceIcon} {
       @include wow-icon($racePositionX, $racePositionY, $raceIconsBackgroundUrl, $raceIconSize);
     }
 
     $racePositionX: $racePositionX - $raceIconSize;
     $raceIconIndex: $raceIconIndex + 1;
-    
+
     @if $raceIconIndex == 4 {
       $racePositionY: $racePositionY - $raceIconSize;
       $racePositionX: 0;
