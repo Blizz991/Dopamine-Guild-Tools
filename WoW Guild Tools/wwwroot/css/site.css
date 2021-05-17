@@ -2886,7 +2886,7 @@ select + {
 .tooltip {
   position: relative;
   display: inline-block; }
-  .tooltip--buff {
+  .tooltip-buff {
     height: 36px; }
   .tooltip img {
     border: 2px solid; }
@@ -3037,6 +3037,12 @@ select + {
       margin: 0 4px 4px 0; }
       .raidgroup__global-buffs .global-buffs__class .tooltip:last-of-type {
         margin: 0 0 4px 0; }
+  .raidgroup__global-buffs .global-buffs--disabled {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%); }
 
 .roster-create {
   grid-column: auto/span 12; }

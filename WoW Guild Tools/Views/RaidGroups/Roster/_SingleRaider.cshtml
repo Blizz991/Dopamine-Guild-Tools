@@ -3,7 +3,7 @@
     var wowClass = Model.Class.ToString().CreateSlug();
     var wowSpec = Model.Spec.ToString().CreateSlug();
 }
-<article class="role__raider @Html.Raw(wowClass)-text @Html.Raw(wowClass)-border">
+<article data-wow-class="@Html.Raw(wowClass)" data-wow-spec="@Html.Raw(wowSpec)" class="role__raider @Html.Raw(wowClass)-text @Html.Raw(wowClass)-border">
     @Model.Name
     <i class="role__spec-icon wow-icon__@Html.Raw(wowClass)--@Html.Raw(wowSpec)--small"></i>
 </article>

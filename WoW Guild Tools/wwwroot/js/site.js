@@ -1,15 +1,15 @@
 ﻿//Prevent wowhead tooltips from linking - there's something to be considered for whether or not this makes sense.
-var wowheadlinks = document.getElementsByClassName("wowheadtooltip");
-for (var i = 0; i < wowheadlinks.length; i++) {
-    wowheadlinks[i].addEventListener("click", function (e) {
-        e.preventDefault();
-    })
-}
+//let wowheadlinks = document.getElementsByClassName("wowheadtooltip");
 
-var coll = document.getElementsByClassName("collapsible__trigger");
-var i;
+//for (let i = 0; i < wowheadlinks.length; i++) {
+//    wowheadlinks[i].addEventListener("click", function (e) {
+//        e.preventDefault();
+//    })
+//}
 
-for (i = 0; i < coll.length; i++) {
+let coll = document.getElementsByClassName("collapsible__trigger");
+
+for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function (e) {
         e.preventDefault();
         var content = this.nextElementSibling;
@@ -87,6 +87,8 @@ function sortTable(n, tableElemId) {
 
 // Library / Framework specific
 $(document).ready(function () {
+
+    /* Setup select2 */
     $('select').select2({
         minimumResultsForSearch: Infinity,
         dropdownAutoWidth: true,
@@ -98,54 +100,5 @@ $(document).ready(function () {
     });
     $(".select--search").select2({
         theme: 'slate',
-    });
-
-    var roleContainers = document.getElementsByClassName("role__inner-container");
-
-    for (var i = 0; i < roleContainers.length; i++) {
-        new Sortable(roleContainers[i], {
-            animation: 150,
-            sort: false,
-            /*removeOnSpill: true, // Enable plugin*/
-            group: {
-                //put: function(to) {
-                //    return to.el.children && 'raidgroup',
-                //},
-                name: 'raider',
-                pull: 'clone',
-            }
-            /*ghostClass: 'blue-background-class'*/
-        });
-    }
-
-    var groupsInRaids = document.getElementsByClassName("raidgroup__slots");
-
-    for (var i = 0; i < groupsInRaids.length; i++) {
-        new Sortable(groupsInRaids[i], {
-            animation: 150,
-            //TODO: Allow swapping AND sorting
-            //TODO: Fix drop threshold
-            /*swap: true,*/
-            removeOnSpill: true, // Enable plugin
-            group: {
-                /*put: ['raider', 'raidgroup'],*/
-                name: 'raidgroup',
-                put: function(to) {
-                    return to.el.children.length + 1 <= 5 && ['raider', 'raidgroup']; //length starts at 0
-                },
-                /*pull: 'swap'*/
-            }
-
-            /*ghostClass: 'blue-background-class'*/
-        });
-    }
-
-    jQuery('#raidGroupDateTimePicker').datetimepicker({
-        /*inline: true,*/
-        format: 'd/m/Y',
-        minDate: 0, // today
-        theme: 'dark',
-        timepicker: false,
-        dayOfWeekStart: 1,
     });
 });

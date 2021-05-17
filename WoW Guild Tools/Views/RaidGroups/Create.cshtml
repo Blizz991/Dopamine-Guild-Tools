@@ -36,17 +36,17 @@
                 <article class="raids__raidgroup">
                     <header class="raidgroup__header">
                         @*<label asp-for="Name" class="control-label"></label>
-            <input placeholder="Raid Group Name*" required asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>*@
+                            <input placeholder="Raid Group Name*" required asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>*@
                     </header>
                     <section class="raidgroup__groups">
                         @{ await Html.RenderPartialAsync("_SingleGroup");}
                         @*<aside class="raidgroup__options">
-                <a class="raidgroup__add-group button icon-button button--success" aria-label="Add group" asp-action="AddGroup">
-                </a>
-                <a class="raidgroup__remove-group button icon-button button--danger" aria-label="Remove group" asp-action="RemoveGroup">
-                </a>
-            </aside>*@
+                                <a class="raidgroup__add-group button icon-button button--success" aria-label="Add group" asp-action="AddGroup">
+                                </a>
+                                <a class="raidgroup__remove-group button icon-button button--danger" aria-label="Remove group" asp-action="RemoveGroup">
+                                </a>
+                            </aside>*@
                     </section>
                     <section class="raidgroup__global-buffs">
                         @{ await Html.RenderPartialAsync("Buffs/_RaidBuffs");}
@@ -55,13 +55,13 @@
                         @{ await Html.RenderPartialAsync("Buffs/_RaidDebuffs");}
                     </section>
                     @*<footer class="raidgroup__footer">
-            <a class="raidgroup__duplicate button button--success button--icon" asp-action="DuplicateRaid">
-                Duplicate raid
-            </a>
-            <a class="raidgroup__add button button--success button--icon" asp-action="AddRaid">
-                Add raid
-            </a>
-        </footer>*@
+                            <a class="raidgroup__duplicate button button--success button--icon" asp-action="DuplicateRaid">
+                                Duplicate raid
+                            </a>
+                            <a class="raidgroup__add button button--success button--icon" asp-action="AddRaid">
+                                Add raid
+                            </a>
+                        </footer>*@
                 </article>
             </section>
         </section>
@@ -77,4 +77,193 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        // Class - Specs mapping
+        function ClassSpec(Class, Specs = []) {
+            this.Class = Class;
+            this.Specs = Specs;
+        }
+
+        function ClassSpecsList(ClassSpecs) {
+            this.ClassSpecs = ClassSpecs;
+        };
+
+        var classSpecsList = new ClassSpecsList(
+            [
+                new ClassSpec(
+                    "druid",
+                    [
+                        "balance",
+                        "feralcombat",
+                        "restoration"
+                    ]
+                ),
+                new ClassSpec(
+                    "hunter",
+                    [
+                        "beastmastery",
+                        "marksmanship",
+                        "survival"
+                    ]
+                ),
+                new ClassSpec(
+                    "mage",
+                    [
+                        "arcane",
+                        "fire",
+                        "frost"
+                    ]
+                ),
+                new ClassSpec(
+                    "paladin",
+                    [
+                        "holy",
+                        "protection",
+                        "retribution"
+                    ]
+                ),
+                new ClassSpec(
+                    "priest",
+                    [
+                        "discipline",
+                        "holy",
+                        "shadow"
+                    ]
+                ),
+                new ClassSpec(
+                    "rogue",
+                    [
+                        "assassination",
+                        "combat",
+                        "subtlety"
+                    ]
+                ),
+                new ClassSpec(
+                    "shaman",
+                    [
+                        "elemental",
+                        "enhancement",
+                        "restoration"
+                    ]
+                ),
+                new ClassSpec(
+                    "warlock",
+                    [
+                        "affliction",
+                        "demonology",
+                        "destruction"
+                    ]
+                ),
+                new ClassSpec(
+                    "warrior",
+                    [
+                        "arms",
+                        "fury",
+                        "protection"
+                    ]
+                )
+            ]
+        )
+
+        var roleContainers = document.getElementsByClassName("role__inner-container");
+
+        for (var i = 0; i < roleContainers.length; i++) {
+            new Sortable(roleContainers[i], {
+                animation: 150,
+                sort: false,
+                /*removeOnSpill: true, // Enable plugin*/
+                group: {
+                    //put: function(to) {
+                    //    return to.el.children && 'raidgroup',
+                    //},
+                    name: 'raider',
+                    pull: 'clone',
+                }
+                /*ghostClass: 'blue-background-class'*/
+            });
+        }
+
+        var groupsInRaids = document.getElementsByClassName("raidgroup__slots");
+
+        for (var i = 0; i < groupsInRaids.length; i++) {
+            new Sortable(groupsInRaids[i], {
+                animation: 150,
+                //TODO: Allow swapping AND sorting
+                //TODO: Fix drop threshold
+                /*swap: true,*/
+                removeOnSpill: true, // Enable plugin
+                group: {
+                    /*put: ['raider', 'raidgroup'],*/
+                    name: 'raidgroup',
+                    put: function (to) {
+                        return to.el.children.length + 1 <= 5 && ['raider', 'raidgroup']; //length starts at 0
+                    },
+                    /*pull: 'swap'*/
+                },
+                onSpill: function (evt) {
+                    let wowClass = evt.item.dataset.wowClass;
+                    let wowSpec = evt.item.dataset.wowSpec;
+
+                    updateRaidBuffs(wowClass, wowSpec);
+                },
+                onSort: function (evt) {
+                    //console.log(evt.item.dataset.wowClass);
+                    //console.log(evt.item.dataset.wowSpec);
+                    let wowClass = evt.item.dataset.wowClass;
+                    let wowSpec = evt.item.dataset.wowSpec;
+
+                    updateRaidBuffs(wowClass, wowSpec, true);
+                },
+
+                /*ghostClass: 'blue-background-class'*/
+            });
+        }
+
+        const classBuffs = document.querySelectorAll('img[data-wow-class]:not([data-wow-spec]');
+        const classSpecBuffs = document.querySelectorAll('img[data-wow-class][data-wow-spec]');
+
+        function updateRaidBuffs(wowClass, wowSpec, enable = false) {
+            // The raider added has a class and spec (although it always should, you never know)
+            if (wowClass !== null && wowSpec !== null) {
+                for (let i = 0; i < classSpecBuffs.length; i++) {
+                    let el = classSpecBuffs[i];
+
+                    // Check that element has the correct class AND spec (some classes have the same spec names)
+                    if (el.dataset.wowClass == wowClass && el.dataset.wowSpec == wowSpec) {
+                        console.log(el);
+                        if (enable) {
+                            console.log("REMOVE");
+                            console.log(el.classList);
+                            el.classList.remove('global-buffs--disabled');
+                        } else {
+                            console.log("ADD");
+                            console.log(el.classList);
+                            el.classList.add('global-buffs--disabled');
+                        }
+                    }
+                }
+
+                for (let i = 0; i < classBuffs.length; i++) {
+                    let el = classBuffs[i];
+                    if (el.dataset.wowClass == wowClass) {
+                        if (enable) {
+                            el.classList.remove('global-buffs--disabled');
+                        } else {
+                            el.classList.add('global-buffs--disabled');
+                        }
+                    }
+                }
+            }
+        }
+
+        jQuery('#raidGroupDateTimePicker').datetimepicker({
+            /*inline: true,*/
+            format: 'd/m/Y',
+            minDate: 0, // today
+            theme: 'dark',
+            timepicker: false,
+            dayOfWeekStart: 1,
+        });
+    </script>
 }
