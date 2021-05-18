@@ -61,9 +61,9 @@
             </section>
         </section>
 
-        <button type="submit" asp-action="Create" class="button button--success button--icon">
+        @*<button type="submit" asp-action="Create" class="button button--success button--icon">
             Publish setup
-        </button>
+        </button>*@
     </section>
 </form>
 
@@ -172,6 +172,7 @@
                 sort: false,
                 /*removeOnSpill: true, // Enable plugin*/
                 group: {
+                    put: false,
                     name: 'raider',
                     pull: 'clone',
                 }
@@ -190,7 +191,7 @@
                     name: 'raidgroup',
                     put: function (to, from, item) {
                         let shouldInsert = false;
-                        let raiderCloneName = item.querySelector('span.raider__name').innerHTML;
+                        let raiderCloneName = getRaiderName(item);
 
                         // Is raider already in raid?
                         if (to.el.children.length + 1 <= 5) { // length starts at 0
@@ -204,6 +205,9 @@
                                 }
                             }
                         }
+                        //else {
+                        //    alert('more than 5 raiders in group!');
+                        //}
                         // all our checks were true - but we also need to check if it's in the correct sortable group
                         // i wasn't able to find a way to do this check earlier
                         return shouldInsert && ['raider', 'raidgroup'];
@@ -211,30 +215,19 @@
                     /*pull: 'swap'*/
                 },
                 onAdd: function (evt) {
-                    let raiderName = evt.item.querySelector('span.raider__name').innerHTML;
+                    let raiderName = getRaiderName(evt.item);
                     let wowClass = evt.item.dataset.wowClass;
                     let wowSpec = evt.item.dataset.wowSpec;
 
                     addRaiderToActiveRaidersJSON(raiderName, wowClass, wowSpec);
-
                     updateRaidBuffs();
                 },
                 onSpill: function (evt) {
-                    let raiderName = evt.item.querySelector('span.raider__name').innerHTML;
+                    let raiderName = getRaiderName(evt.item);
 
                     removeRaiderFromActiveRaidersJSON(raiderName);
                     updateRaidBuffs();
                 },
-                //onSort: function (evt) {
-                //    //console.log(evt.item.dataset.wowClass);
-                //    //console.log(evt.item.dataset.wowSpec);
-                //    //let wowClass = evt.item.dataset.wowClass;
-                //    //let wowSpec = evt.item.dataset.wowSpec;
-
-                //    updateRaidBuffs();
-                //},
-
-                /*ghostClass: 'blue-background-class'*/
             });
         }
 
@@ -242,6 +235,16 @@
             "raiders": [
             ],
         };
+
+        function getRaiderName(el) {
+            let raiderName = el.dataset.mainName;
+
+            if (raiderName === undefined) {
+                raiderName = el.querySelector('span.raider__name').innerHTML;
+            }
+
+            return raiderName;
+        }
 
         function checkIfRaiderInArray(raiderName) {
             let raiderInArray = false;
@@ -315,36 +318,6 @@
 
             return classSpecInArray;
         }
-
-        //function updateActiveRaidersJSON() {
-        //    console.clear();
-        //    console.log('Updating raiders');
-        //    console.log(raidersInRaid.raiders);
-        //    // Get raiders currently in the raid setup
-        //    // the :not(.sortable - ghost) is to prevent including raiders that are being removed from the setup
-        //    // as they still exist in the raid setup at this time
-        //    let raiderElementsInRaid = document.querySelectorAll('.raidgroup__slots .role__raider:not(.sortable-ghost)');
-
-        //    for (let i = 0; i < raiderElementsInRaid.length; i++) {
-        //        let raiderName = raiderElementsInRaid[i].querySelector('span.raider__name').innerHTML;
-        //        let raiderClass = raiderElementsInRaid[i].dataset.wowClass;
-        //        let raiderSpec = raiderElementsInRaid[i].dataset.wowSpec;
-        //        console.log(raiderName + ": " + raiderClass + " - " + raiderSpec);
-
-        //        //for (let i = 0; i < raidersInRaid.raiders; i++) {
-        //        //    if (!raidersInRaid.raiders[i].name == raiderName) {
-
-        //        //    }
-        //        //}
-
-        //        addRaiderToActiveRaidersJSON(raiderName, raiderClass, raiderSpec);
-
-
-
-        //        console.log('After update:')
-        //        console.log(raidersInRaid.raiders);
-        //    }
-        //}
 
         const classBuffs = document.querySelectorAll('img[data-wow-class]:not([data-wow-spec]');
         const classSpecBuffs = document.querySelectorAll('img[data-wow-class][data-wow-spec]');
