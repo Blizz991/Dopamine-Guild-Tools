@@ -15,6 +15,8 @@ namespace WoW_Guild_Tools.Models.Enums
         Officer,
         Raider,
         Trial,
+        [Display(Name ="Raider Alt")]
+        RaiderAlt,
         Member
     }
 }

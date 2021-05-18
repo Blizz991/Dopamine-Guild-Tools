@@ -1,75 +1,118 @@
-﻿@model WoW_Guild_Tools.Models.Raider
-
+﻿@model WoW_Guild_Tools.Models.ViewModels.CreateEditRaiderViewModel
 @{
-    ViewData["Title"] = "Edit Raider";
+    if (Model != null && Model.MainRaiders != null)
+    {
+        ViewData["Title"] = "Add alt";
+    }
+    else
+    {
+        ViewData["Title"] = "Add raider";
+    }
 }
 
 <form asp-action="Edit">
     <section asp-validation-summary="ModelOnly" class="validation__error">
+        <input type="hidden" asp-for="Raider.Id" />
 
-        <label asp-for="Name" class="control-label"></label>
-        <input placeholder="Name" asp-for="Name" />
-        <span asp-validation-for="Name" class="validation__error"></span>
+        <section class="roster-create__form-line">
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Name" class="control-label"></label>
+                <input placeholder="Name" asp-for="Raider.Name" />
+                <span asp-validation-for="Raider.Name" class="validation__error"></span>
+            </article>
 
-        <label asp-for="Race" class="control-label"></label>
-        <select class="select--search"
-                asp-for="Race"
-                asp-items="Html.GetEnumSelectList<WowRace>()">
-        </select>
-        <span asp-validation-for="Race" class="validation__error"></span>
-
-        <label asp-for="Class" class="control-label"></label>
-        <select class="select--search"
-                asp-for="Class"
-                asp-items="Html.GetEnumSelectList<WowClass>()">
-        </select>
-        <span asp-validation-for="Class" class="validation__error"></span>
-
-        <label asp-for="Spec" class="control-label"></label>
-        <select class="select--search"
-                asp-for="Spec"
-                asp-items="Html.GetEnumSelectList<WowSpec>()">
-        </select>
-        <span asp-validation-for="Spec" class="validation__error"></span>
-
-        <label asp-for="Role" class="control-label"></label>
-        <select asp-for="Role"
-                asp-items="Html.GetEnumSelectList<WowSpecRole>()">
-        </select>
-        <span asp-validation-for="Role" class="validation__error"></span>
-
-        <label asp-for="Rank" class="control-label"></label>
-        <select asp-for="Rank"
-                asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
-        </select>
-        <span asp-validation-for="Rank" class="validation__error"></span>
-
-        <label asp-for="Profession1" class="control-label"></label>
-        <select class="select--search"
-                asp-for="Profession1"
-                asp-items="Html.GetEnumSelectList<WowProfession>()">
-        </select>
-        <span asp-validation-for="Profession1" class="validation__error"></span>
-
-        <label asp-for="Profession2" class="control-label"></label>
-        <select class="select--search"
-                asp-for="Profession2"
-                asp-items="Html.GetEnumSelectList<WowProfession>()">
-        </select>
-        <span asp-validation-for="Profession2" class="validation__error"></span>
+            @if (Model != null && Model.MainRaiders != null)
+                {
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.MainId"></label>
+                <select asp-for="Raider.MainId" class="select--search">
+                    <option value="0">
+                        Select main
+                    </option>
+                    @foreach (Raider raider in Model.MainRaiders)
+                {
+                    <option value="@raider.Id">@raider.Name</option>
+                }
+                </select>
+                <span asp-validation-for="Raider.MainId" class="validation__error"></span>
+            </article>
+                }
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Race" class="control-label"></label>
+                <select class="select--search"
+                        asp-for="Raider.Race"
+                        asp-items="Html.GetEnumSelectList<WowRace>()">
+                </select>
+                <span asp-validation-for="Raider.Race" class="validation__error"></span>
+            </article>
+        </section>
+        <section class="roster-create__form-line">
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Class" class="control-label"></label>
+                <select class="select--search"
+                        asp-for="Raider.Class"
+                        asp-items="Html.GetEnumSelectList<WowClass>()">
+                </select>
+                <span asp-validation-for="Raider.Class" class="validation__error"></span>
+            </article>
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Spec" class="control-label"></label>
+                <select class="select--search"
+                        asp-for="Raider.Spec"
+                        asp-items="Html.GetEnumSelectList<WowSpec>()">
+                </select>
+                <span asp-validation-for="Raider.Spec" class="validation__error"></span>
+            </article>
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Role" class="control-label"></label>
+                <select asp-for="Raider.Role"
+                        asp-items="Html.GetEnumSelectList<WowSpecRole>()">
+                </select>
+                <span asp-validation-for="Raider.Role" class="validation__error"></span>
+            </article>
+        </section>
+        <section class="roster-create__form-line">
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Rank" class="control-label"></label>
+                <select asp-for="Raider.Rank"
+                        asp-items="Html.GetEnumSelectList<WowRaiderRank>()">
+                </select>
+                <span asp-validation-for="Raider.Rank" class="validation__error"></span>
+            </article>
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Profession1" class="control-label"></label>
+                <select class="select--search"
+                        asp-for="Raider.Profession1"
+                        asp-items="Html.GetEnumSelectList<WowProfession>()">
+                </select>
+                <span asp-validation-for="Raider.Profession1" class="validation__error"></span>
+            </article>
+            <article class="roster-create__form-group">
+                <label asp-for="Raider.Profession2" class="control-label"></label>
+                <select class="select--search"
+                        asp-for="Raider.Profession2"
+                        asp-items="Html.GetEnumSelectList<WowProfession>()">
+                </select>
+                <span asp-validation-for="Raider.Profession2" class="validation__error"></span>
+            </article>
+        </section>
         @*<input type="checkbox" asp-for="IsAlt" />
-            @if (Model.IsAlt)
-            {
+        @if (Model.IsAlt)
+        {
 
-                    <label asp-for="MainId" class="control-label"></label>
-                    <input asp-for="Main"/>
+                <label asp-for="MainId" class="control-label"></label>
+                <input asp-for="Main"/>
 
-            }*@
-        <input type="submit" value="Save" class="btn btn-primary" />
+        }*@
+        @*<input type="submit" value="Save" class="btn btn-primary" />*@
+        <section class="roster-create__form-line roster-create__buttons">
+            <button type="submit" asp-action="Edit" class="roster-create__add-raider button button--success button--icon">
+                Update raider
+            </button>
+            <a class="roster-create__cancel button button--warning button--icon" asp-action="Index">Cancel</a>
+        </section>
     </section>
 </form>
-
-<a asp-action="Index">Back to List</a>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

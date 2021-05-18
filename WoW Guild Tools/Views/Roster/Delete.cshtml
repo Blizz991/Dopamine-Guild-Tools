@@ -3,66 +3,76 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<section class="roster-delete">
+    @*<ul class="roster-delete__list">
+        </ul>
+        <dl class="roster-delete__details">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Race)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Race)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Class)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Class)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Spec)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Spec)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rank)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Rank)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Profession1)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Profession1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Profession2)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Profession2)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Main)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Main.Name)
+            </dd>
+        </dl>*@
+    <form class="roster-delete__form" asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <h2>Confirm deletion</h2>
+        <section class="roster-create__form-line roster-delete__buttons">
+            <button type="submit" asp-action="Delete" class="roster-delete__raider button button--danger button--icon">
+                Permanently delete @Html.DisplayFor(model => model.Name) 
+            </button>
+            <a class="roster-create__cancel button button--warning button--icon" asp-action="Index">Cancel</a>
+        </section>
 
-<dl>
-    <dt>
-        @Html.DisplayNameFor(model => model.Name)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Name)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Race)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Race)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Class)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Class)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Spec)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Spec)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Role)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Role)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Rank)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Rank)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Profession1)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Profession1)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Profession2)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Profession2)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Main)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Main.Name)
-    </dd>
-</dl>
-
-<form asp-action="Delete">
-    <input type="hidden" asp-for="Id" />
-    <input type="submit" value="Delete" class="btn btn-danger" /> |
-    <a asp-action="Index">Back to List</a>
-</form>
+        @*<input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>*@
+    </form>
+</section>

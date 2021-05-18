@@ -222,55 +222,55 @@ namespace WoW_Guild_Tools.Controllers
             return _context.RaidGroups.Any(e => e.Id == id);
         }
 
-        private async Task<RosterCharacters> GetRosterCharacters()
+        private async Task<RosterCharactersViewModel> GetRosterCharacters()
         {
             List<Raider> allRaiders = await _context.Raiders.ToListAsync();
 
-            RosterCharacters rosterCharacters = new RosterCharacters
+            RosterCharactersViewModel rosterCharacters = new RosterCharactersViewModel
             {
-                Mains = new RoleRaiders
+                Mains = new RoleRaidersViewModel
                 {
                     Title = "Mains",
-                    Tanks = new SingleRole
+                    Tanks = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Tank,
                         Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Tank).ToList()
                     },
-                    Healers = new SingleRole
+                    Healers = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Healer,
                         Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Healer).ToList()
                     },
-                    Melee = new SingleRole
+                    Melee = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Melee,
                         Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Melee).ToList()
                     },
-                    Ranged = new SingleRole
+                    Ranged = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Ranged,
                         Raiders = allRaiders.Where(r => r.IsAlt == false && r.Role == WowSpecRole.Ranged).ToList()
                     }
                 },
-                Alts = new RoleRaiders
+                Alts = new RoleRaidersViewModel
                 {
                     Title = "Alts",
-                    Tanks = new SingleRole
+                    Tanks = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Tank,
                         Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Tank).ToList()
                     },
-                    Healers = new SingleRole
+                    Healers = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Healer,
                         Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Healer).ToList()
                     },
-                    Melee = new SingleRole
+                    Melee = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Melee,
                         Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Melee).ToList()
                     },
-                    Ranged = new SingleRole
+                    Ranged = new SingleRoleViewModel
                     {
                         WowSpecRole = WowSpecRole.Ranged,
                         Raiders = allRaiders.Where(r => r.IsAlt == true && r.Role == WowSpecRole.Ranged).ToList()

@@ -1,0 +1,25 @@
+﻿.roster-delete {
+    @include grid-column(12);
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__buttons {
+    }
+
+    &__raider {
+        margin-right: 16px;
+
+        &:before {
+            content: "delete";
+        }
+    }
+}

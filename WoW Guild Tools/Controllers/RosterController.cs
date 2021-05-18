@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WoW_Guild_Tools.Data;
 using WoW_Guild_Tools.Models;
 using WoW_Guild_Tools.Models.Enums;
+using WoW_Guild_Tools.Models.ViewModels;
 
 namespace WoW_Guild_Tools.Controllers
 {
@@ -48,9 +49,28 @@ namespace WoW_Guild_Tools.Controllers
         //}
 
         // GET: Roster/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(bool alt)
         {
-            return View();
+            ViewResult view;
+
+            if (!alt)
+            {
+                view = View();
+            }
+            else
+            {
+                var mainsRaiders = await _context.Raiders.FromSqlRaw<Raider>("exec GetMainRaiders").ToListAsync();
+
+                view = View(
+                    new CreateEditRaiderViewModel
+                    {
+                        Alt = alt,
+                        MainRaiders = mainsRaiders
+                    }
+                );
+            }
+
+            return view;
         }
 
         // POST: Roster/Create
@@ -71,7 +91,7 @@ namespace WoW_Guild_Tools.Controllers
         }
 
         // GET: Roster/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, bool alt)
         {
             if (id == null)
             {
@@ -83,8 +103,20 @@ namespace WoW_Guild_Tools.Controllers
             {
                 return NotFound();
             }
-            ViewData["MainId"] = new SelectList(_context.Raiders, "Id", "Name", raider.MainId);
-            return View(raider);
+
+            var model = new CreateEditRaiderViewModel
+            {
+                Alt = alt,
+                Raider = raider
+            };
+
+            if (alt)
+            {
+                var mainsRaiders = await _context.Raiders.FromSqlRaw<Raider>("exec GetMainRaiders").ToListAsync();
+                model.MainRaiders = mainsRaiders;
+            }
+
+            return View(model);
         }
 
         // POST: Roster/Edit/5
@@ -92,7 +124,7 @@ namespace WoW_Guild_Tools.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Race,Class,Spec,Role,Rank,Profession1,Profession2,MainId")] Raider raider)
+        public async Task<IActionResult> Edit(int id, bool alt, [Bind("Id,Name,Race,Class,Spec,Role,Rank,Profession1,Profession2,MainId")] Raider raider)
         {
             if (id != raider.Id)
             {
@@ -100,7 +132,7 @@ namespace WoW_Guild_Tools.Controllers
             }
 
             if (ModelState.IsValid)
-            {
+            {   
                 try
                 {
                     _context.Update(raider);
@@ -119,7 +151,7 @@ namespace WoW_Guild_Tools.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MainId"] = new SelectList(_context.Raiders, "Id", "Name", raider.MainId);
+            
             return View(raider);
         }
 

@@ -5,203 +5,165 @@
 @*<h1>Roster</h1>*@
 <section class="roster">
     <section class="roster__characters">
-        <article class="roster__mains">
-            <header class="roster__header">
-                <h2 class="roster__title">Mains</h2>
-                <a class="roster__add-raider button button--success button--icon" asp-action="Create">
-                    Add new raider
-                </a>
-            </header>
-            <table id="mainsTable" class="table">
-                <thead>
-                    <tr>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(0, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Name)
-                        </th>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(1, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Race)
-                        </th>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(2, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Class) /
-                            @Html.DisplayNameFor(model => model.Spec)
-                        </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.Spec)
-                            </th>*@
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(3, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Role)
-                        </th>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(4, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Profession1)
-                        </th>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(5, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Profession2)
-                        </th>
-                        <th class="sortable" title="Click to sort by this column" onclick="sortTable(6, 'mainsTable')">
-                            @Html.DisplayNameFor(model => model.Rank)
-                        </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.Main)
-                            </th>*@
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Where(r => r.IsAlt == false))
-                    {
-                        var wowClass = @item.Class.ToString().CreateSlug();
-                        var wowSpec = @item.Spec.ToString().CreateSlug();
-        <tr>
-            <td class="@Html.Raw(wowClass)-text">
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Race)
-            </td>
-            <td class="@Html.Raw(wowClass)-text">
-                <div class="d-flex">
-                    @Html.DisplayFor(modelItem => item.Class)
-                    <i class="role__spec-icon wow-icon__@Html.Raw(wowClass)--@Html.Raw(wowSpec)--small"></i>
-                </div>
-            </td>
-            @*<td class="@wowClassClassName">
-                    @Html.DisplayFor(modelItem => item.Spec)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rank)
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Main.Name)
-                </td>*@
-            <td>
-                <div class="roster__options">
-                    <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" aria-label="Edit"></a>
-                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                    <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
-                </div>
-            </td>
-        </tr>}
-                </tbody>
-            </table>
-        </article>
+        @{ await Html.RenderPartialAsync("Partials/_MainRaidersTable");
+            await Html.RenderPartialAsync("Partials/_AltRaidersTable");
+        }
     </section>
     <section class="roster__overview">
         <article class="roster__spec-overviews">
             <header class="roster__header">
-                <h2 class="roster__title">Overview - Total mains: @Model.Where(r => r.IsAlt == false).Count()</h2>
+                <h2 class="roster__title">Overview</h2>
             </header>
             <article class="roster__spec-tables">
+                @* TODO?: Extract to partial view(s) *@
                 <table class="table">
-                    <thead>
+                    <thead class="not-sticky">
                         <tr>
                             <th class="bold">Tanks</th>
                             <th>Mains</th>
-                            @*<th>Alts</th>*@
+                            <th>Alts</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Tank).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
+                        @{ var tanks = Model.Where(r => r.Role == WowSpecRole.Tank)
+                                                          .GroupBy(r => r.Class)
+                                                          .OrderBy(group => group.Key)
+                                                          .Select(group => new
+                                                          {
+                                                              WowClass = group.Key,
+                                                              MainCount = group.Count(r => r.MainId == null),
+                                                              AltCount = group.Count(r => r.MainId != null)
+                                                          }); }
+                        @foreach (var tankClass in tanks)
                         {
-                            <tr>
-                                <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                                <td>@item.Item2</td>
-                                @*<td></td>*@
-                            </tr>
-                        }
+            <tr>
+                <td class="@tankClass.WowClass.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => tankClass.WowClass)s</td>
+                <td>@tankClass.MainCount</td>
+                <td>@tankClass.AltCount</td>
+            </tr>
+}
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td class="bold">Total: </td>
+                        <tr class="bold">
+                            <td>Total: </td>
                             <td>@Model.Where(r => r.Role == WowSpecRole.Tank && r.IsAlt == false).Count()</td>
-                            @*<td></td>*@
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Tank && r.IsAlt == true).Count()</td>
                         </tr>
                     </tfoot>
                 </table>
                 <table class="table">
-                    <thead>
+                    <thead class="not-sticky">
                         <tr>
-                            <th class="bold">Healers</th>
+                            <th class="bold">Tanks</th>
                             <th>Mains</th>
-                            @*<th>Alts</th>*@
+                            <th>Alts</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Healer).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
+                        @{ var healers = Model.Where(r => r.Role == WowSpecRole.Healer)
+                                                          .GroupBy(r => r.Class)
+                                                          .OrderBy(group => group.Key)
+                                                          .Select(group => new
+                                                          {
+                                                              WowClass = group.Key,
+                                                              MainCount = group.Count(r => r.MainId == null),
+                                                              AltCount = group.Count(r => r.MainId != null)
+                                                          }); }
+                        @foreach (var healerClass in healers)
                         {
-                <tr>
-                    <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                    <td>@item.Item2</td>
-                    @*<td></td>*@
-                </tr>}
+            <tr>
+                <td class="@healerClass.WowClass.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => healerClass.WowClass)s</td>
+                <td>@healerClass.MainCount</td>
+                <td>@healerClass.AltCount</td>
+            </tr>}
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td class="bold">Total: </td>
+                        <tr class="bold">
+                            <td>Total: </td>
                             <td>@Model.Where(r => r.Role == WowSpecRole.Healer && r.IsAlt == false).Count()</td>
-                            @*<td></td>*@
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Healer && r.IsAlt == true).Count()</td>
                         </tr>
                     </tfoot>
                 </table>
                 <table class="table">
-                    <thead>
+                    <thead class="not-sticky">
                         <tr>
-                            <th class="bold">Melee</th>
+                            <th class="bold">Tanks</th>
                             <th>Mains</th>
-                            @*<th>Alts</th>*@
+                            <th>Alts</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Melee).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
+                        @{ var melee = Model.Where(r => r.Role == WowSpecRole.Melee)
+                                                          .GroupBy(r => r.Class)
+                                                          .OrderBy(group => group.Key)
+                                                          .Select(group => new
+                                                          {
+                                                              WowClass = group.Key,
+                                                              MainCount = group.Count(r => r.MainId == null),
+                                                              AltCount = group.Count(r => r.MainId != null)
+                                                          }); }
+                        @foreach (var meleeClass in melee)
                         {
-                            <tr>
-                                <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                                <td>@item.Item2</td>
-                                @*<td></td>*@
-                            </tr>
-                        }
+            <tr>
+                <td class="@meleeClass.WowClass.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => meleeClass.WowClass)s</td>
+                <td>@meleeClass.MainCount</td>
+                <td>@meleeClass.AltCount</td>
+            </tr>
+}
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td class="bold">Total: </td>
+                        <tr class="bold">
+                            <td>Total: </td>
                             <td>@Model.Where(r => r.Role == WowSpecRole.Melee && r.IsAlt == false).Count()</td>
-                            @*<td></td>*@
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Melee && r.IsAlt == true).Count()</td>
                         </tr>
                     </tfoot>
                 </table>
                 <table class="table">
-                    <thead>
+                    <thead class="not-sticky">
                         <tr>
-                            <th class="bold">Ranged</th>
+                            <th class="bold">Tanks</th>
                             <th>Mains</th>
-                            @*<th>Alts</th>*@
+                            <th>Alts</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Ranged).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
+                        @{ var ranged = Model.Where(r => r.Role == WowSpecRole.Ranged)
+                                                          .GroupBy(r => r.Class)
+                                                          .OrderBy(group => group.Key)
+                                                          .Select(group => new
+                                                          {
+                                                              WowClass = group.Key,
+                                                              MainCount = group.Count(r => r.MainId == null),
+                                                              AltCount = group.Count(r => r.MainId != null)
+                                                          }); }
+                        @foreach (var rangedClass in ranged)
                         {
-                <tr>
-                    <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                    <td>@item.Item2</td>
-                    @*<td></td>*@
-                </tr>}
+            <tr>
+                <td class="@rangedClass.WowClass.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => rangedClass.WowClass)s</td>
+                <td>@rangedClass.MainCount</td>
+                <td>@rangedClass.AltCount</td>
+            </tr>}
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td class="bold">Total: </td>
+                        <tr class="bold">
+                            <td>Total: </td>
                             <td>@Model.Where(r => r.Role == WowSpecRole.Ranged && r.IsAlt == false).Count()</td>
-                            @*<td></td>*@
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Ranged && r.IsAlt == true).Count()</td>
                         </tr>
                     </tfoot>
                 </table>
+            </article>
+            <article class="roster__class-graphs">
+                <article class="class-graph__container">
+                    <h3 class="class-graph__title">Mains (@Model.Where(r => r.IsAlt == false).Count())</h3>
+                    <img class="class-graph__graph" src="~/images/Placeholder/classchart.jpg" alt="" />
+                </article>
+                <article class="class-graph__container">
+                    <h3 class="class-graph__title">Alts (@Model.Where(r => r.IsAlt == true).Count())</h3>
+                    <img class="class-graph__graph" src="~/images/Placeholder/classchart.jpg" alt="" />
+                </article>
             </article>
         </article>
     </section>

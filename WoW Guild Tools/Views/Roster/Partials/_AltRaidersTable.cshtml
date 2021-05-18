@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Raider>
+
+<article class="roster__alts">
+    <header class="roster__header">
+        <h2 class="roster__title">Alts</h2>
+        <a class="roster__add-raider button button--success button--icon" asp-action="Create" asp-route-alt="true">
+            Add new raider alt
+        </a>
+    </header>
+    <table id="altsTable" class="table">
+        <thead>
+            <tr>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(0, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(1, 'altsTable')">
+                    Main
+                </th>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(2, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Race)
+                </th>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(3, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Class) /
+                    @Html.DisplayNameFor(model => model.Spec)
+                </th>
+                @*<th>
+            @Html.DisplayNameFor(model => model.Spec)
+        </th>*@
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(4, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(5, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Profession1)
+                </th>
+                <th class="sortable" title="Click to sort by this column" onclick="sortTable(6, 'altsTable')">
+                    @Html.DisplayNameFor(model => model.Profession2)
+                </th>
+                @*<th class="sortable" title="Click to sort by this column" onclick="sortTable(, 'altsTable')">
+            @Html.DisplayNameFor(model => model.Rank)
+        </th>*@
+                @*<th>
+            @Html.DisplayNameFor(model => model.Main)
+        </th>*@
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Where(r => r.IsAlt == true))
+            {
+                var mainWowClass = @item.Main.Class.ToString().CreateSlug();
+                var wowClass = @item.Class.ToString().CreateSlug();
+                var wowSpec = @item.Spec.ToString().CreateSlug();
+            <tr>
+                <td class="@Html.Raw(wowClass)-text">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="@Html.Raw(mainWowClass)-text">
+                    @Html.DisplayFor(modelItem => item.Main.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Race)
+                </td>
+                <td class="@Html.Raw(wowClass)-text">
+                    <div class="d-flex">
+                        @Html.DisplayFor(modelItem => item.Class)
+                        <i class="role__spec-icon wow-icon__@Html.Raw(wowClass)--@Html.Raw(wowSpec)--small"></i>
+                    </div>
+                </td>
+                @*<td class="@wowClassClassName">
+            @Html.DisplayFor(modelItem => item.Spec)
+        </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profession1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profession2)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>*@
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Main.Name)
+        </td>*@
+                <td>
+                    <div class="roster__options">
+                        <a class="button icon-button button--warning roster__btn--edit" asp-action="Edit" asp-route-id="@item.Id" asp-route-alt="@item.IsAlt" aria-label="Edit"></a>
+                        @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                        <a class="button icon-button button--danger roster__btn--delete" asp-action="Delete" asp-route-id="@item.Id" aria-label="Delete"></a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</article>

@@ -9,8 +9,12 @@
 
   thead {
     background: #3A3F44;
-    position: sticky;
-    top: 0;
+
+    &:not(.not-sticky) {
+      position: sticky;
+      top: 0;
+    }
+
     z-index: 2;
 
     tr {

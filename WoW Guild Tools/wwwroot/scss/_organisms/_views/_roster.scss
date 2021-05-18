@@ -4,10 +4,46 @@
 
   &__characters {
     @include grid-column(6);
+
+    .roster__header {
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: $darkColor;
+    }
   }
 
   &__overview {
     @include grid-column(6);
+
+    .roster {
+      &__spec-overviews {
+        position: sticky;
+        top: 0;
+      }
+
+      &__header {
+        padding: 16px 0;
+      }
+
+      &__class-graphs {
+        display: inline-flex;
+        justify-content: space-around;
+
+        .class-graph {
+          &__title {
+            margin-bottom: 16px;
+          }
+
+          /* Image is placeholder! */
+          &__graph {
+            max-width: calc(100% - 16px);
+            height: auto;
+          }
+        }
+      }
+    }
   }
 
   &__spec {
@@ -18,8 +54,13 @@
     }
   }
 
-  &__mains {
+  &__mains,
+  &__alts {
     .table {
+      thead {
+        top: 60px;
+      }
+
       width: 100%;
 
       tbody tr:hover {
@@ -28,16 +69,9 @@
     }
   }
 
-  &__alts {
-    .table {
-      width: 100%;
-    }
-  }
-
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
   }
 
   &__title {

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace WoW_Guild_Tools.Models.ViewModels
 {
-    public class RosterCharacters
+    public class RosterCharactersViewModel
     {
-        public RoleRaiders Mains { get; set; }
-        public RoleRaiders Alts { get; set; }
+        public RoleRaidersViewModel Mains { get; set; }
+        public RoleRaidersViewModel Alts { get; set; }
     }
 }

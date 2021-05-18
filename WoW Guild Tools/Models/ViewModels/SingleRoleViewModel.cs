@@ -6,7 +6,7 @@ using WoW_Guild_Tools.Models.Enums;
 
 namespace WoW_Guild_Tools.Models.ViewModels
 {
-    public class SingleRole
+    public class SingleRoleViewModel
     {
         public WowSpecRole WowSpecRole { get; set; }
         public List<Raider> Raiders { get; set; }

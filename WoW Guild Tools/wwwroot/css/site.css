@@ -2246,9 +2246,10 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   position: relative; }
   .table thead {
     background: #3A3F44;
-    position: sticky;
-    top: 0;
     z-index: 2; }
+    .table thead:not(.not-sticky) {
+      position: sticky;
+      top: 0; }
     .table thead tr {
       height: 40px; }
     .table thead th.sortable {
@@ -2790,6 +2791,21 @@ select + {
   .main-nav__icon {
     margin-right: 8px; }
 
+.footer {
+  position: sticky;
+  bottom: 0;
+  height: 40px;
+  border-top: 2px solid #1C1E22;
+  padding: 8px 32px;
+  background: #3A3F44; }
+  .footer__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    padding: 0; }
+
 .xdsoft_datetimepicker.xdsoft_dark {
   background: #3A3F44;
   box-shadow: none; }
@@ -3065,28 +3081,22 @@ select + {
   .roster-create__cancel:before {
     content: "close"; }
 
-.footer {
-  position: sticky;
-  bottom: 0;
-  height: 40px;
-  border-top: 2px solid #1C1E22;
-  padding: 8px 32px;
-  background: #3A3F44; }
-  .footer__list {
-    list-style: none;
+.roster-delete {
+  grid-column: auto/span 12; }
+  .roster-delete__form {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
-    align-items: center;
-    padding: 0; }
+    flex-direction: column;
+    width: min-content; }
+    .roster-delete__form h2 {
+      text-align: center;
+      margin-bottom: 16px; }
+  .roster-delete__raider {
+    margin-right: 16px; }
+    .roster-delete__raider:before {
+      content: "delete"; }
 
-.wowhead-tooltip {
-  border-radius: 4px !important;
-  border: groove 2px #454545 !important; }
-  .wowhead-tooltip td, .wowhead-tooltip th {
-    background: #252525 !important; }
-  .wowhead-tooltip--block {
-    display: block; }
+.index {
+  grid-column: auto/span 12; }
 
 .roster {
   z-index: 0;
@@ -3096,22 +3106,42 @@ select + {
   grid-column: auto/span 12; }
   .roster__characters {
     grid-column: auto/span 6; }
+    .roster__characters .roster__header {
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #272B30; }
   .roster__overview {
     grid-column: auto/span 6; }
+    .roster__overview .roster__spec-overviews {
+      position: sticky;
+      top: 0; }
+    .roster__overview .roster__header {
+      padding: 16px 0; }
+    .roster__overview .roster__class-graphs {
+      display: inline-flex;
+      justify-content: space-around; }
+      .roster__overview .roster__class-graphs .class-graph {
+        /* Image is placeholder! */ }
+        .roster__overview .roster__class-graphs .class-graph__title {
+          margin-bottom: 16px; }
+        .roster__overview .roster__class-graphs .class-graph__graph {
+          max-width: calc(100% - 16px);
+          height: auto; }
   .roster__spec-tables {
     display: flex;
     justify-content: space-around;
     text-align: center; }
-  .roster__mains .table {
+  .roster__mains .table, .roster__alts .table {
     width: 100%; }
-    .roster__mains .table tbody tr:hover {
+    .roster__mains .table thead, .roster__alts .table thead {
+      top: 60px; }
+    .roster__mains .table tbody tr:hover, .roster__alts .table tbody tr:hover {
       background-color: #1C1E22; }
-  .roster__alts .table {
-    width: 100%; }
   .roster__header {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px; }
+    justify-content: space-between; }
   .roster__title {
     height: 32px; }
   .roster__add-raider:before {
