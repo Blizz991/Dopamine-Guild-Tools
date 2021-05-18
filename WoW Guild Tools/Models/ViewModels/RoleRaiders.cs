@@ -8,6 +8,7 @@ namespace WoW_Guild_Tools.Models.ViewModels
 {
     public class RoleRaiders
     {
+        public string Title { get; set; }
         public SingleRole Tanks { get; set; }
         public SingleRole Healers { get; set; }
         public SingleRole Melee { get; set; }

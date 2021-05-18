@@ -14,20 +14,15 @@
         <section class="roster-characters">
             <h2 class="roster-characters__title">Roster</h2>
             <section class="roster-characters__container">
-                <article class="roster-characters__characters">
-                    <h3 class="roster-characters__title">Mains</h3>
-                    @if (Model.Mains != null)
-                    {
-                        await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Mains);
-                    }
-                </article>
-                <article class="roster-characters__characters">
-                    <h3 class="roster-characters__title">Alts</h3>
-                    @if (Model.Alts != null)
-                    {
-                        await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Alts);
-                    }
-                </article>
+                @if (Model.Mains != null)
+                {
+                    await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Mains);
+                }
+
+                @if (Model.Alts != null && (Model.Alts.Tanks.Raiders.Any() || Model.Alts.Healers.Raiders.Any() || Model.Alts.Melee.Raiders.Any() || Model.Alts.Ranged.Raiders.Any()))
+                {
+                    await Html.RenderPartialAsync("Roster/_RoleRaiders", Model.Alts);
+                }
             </section>
         </section>
         <section class="raids">
@@ -79,7 +74,8 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
     <script>
-        // Class - Specs mapping
+        /* Class - Specs mapping -- currently unused*/
+        /*
         function ClassSpec(Class, Specs = []) {
             this.Class = Class;
             this.Specs = Specs;
@@ -164,19 +160,18 @@
                     ]
                 )
             ]
-        )
+        )*/
 
-        var roleContainers = document.getElementsByClassName("role__inner-container");
 
-        for (var i = 0; i < roleContainers.length; i++) {
+        // Initialize SortableJS on required elements
+        let roleContainers = document.getElementsByClassName("role__inner-container");
+
+        for (let i = 0; i < roleContainers.length; i++) {
             new Sortable(roleContainers[i], {
                 animation: 150,
                 sort: false,
                 /*removeOnSpill: true, // Enable plugin*/
                 group: {
-                    //put: function(to) {
-                    //    return to.el.children && 'raidgroup',
-                    //},
                     name: 'raider',
                     pull: 'clone',
                 }
@@ -184,75 +179,195 @@
             });
         }
 
-        var groupsInRaids = document.getElementsByClassName("raidgroup__slots");
+        let groupsInRaids = document.getElementsByClassName('raidgroup__slots');
 
-        for (var i = 0; i < groupsInRaids.length; i++) {
+        for (let i = 0; i < groupsInRaids.length; i++) {
             new Sortable(groupsInRaids[i], {
                 animation: 150,
-                //TODO: Allow swapping AND sorting
-                //TODO: Fix drop threshold
-                /*swap: true,*/
                 removeOnSpill: true, // Enable plugin
                 group: {
                     /*put: ['raider', 'raidgroup'],*/
                     name: 'raidgroup',
-                    put: function (to) {
-                        return to.el.children.length + 1 <= 5 && ['raider', 'raidgroup']; //length starts at 0
+                    put: function (to, from, item) {
+                        let shouldInsert = false;
+                        let raiderCloneName = item.querySelector('span.raider__name').innerHTML;
+
+                        // Is raider already in raid?
+                        if (to.el.children.length + 1 <= 5) { // length starts at 0
+                            if (!checkIfRaiderInArray(raiderCloneName)) {
+                                shouldInsert = true;
+                            }
+                            else {
+                                // Raider was in the raid, but are we moving it between groups in the raid?
+                                if (from.el.classList.contains('raidgroup__slots')) {
+                                    shouldInsert = true;
+                                }
+                            }
+                        }
+                        // all our checks were true - but we also need to check if it's in the correct sortable group
+                        // i wasn't able to find a way to do this check earlier
+                        return shouldInsert && ['raider', 'raidgroup'];
                     },
                     /*pull: 'swap'*/
                 },
+                onAdd: function (evt) {
+                    let raiderName = evt.item.querySelector('span.raider__name').innerHTML;
+                    let wowClass = evt.item.dataset.wowClass;
+                    let wowSpec = evt.item.dataset.wowSpec;
+
+                    addRaiderToActiveRaidersJSON(raiderName, wowClass, wowSpec);
+
+                    updateRaidBuffs();
+                },
                 onSpill: function (evt) {
-                    let wowClass = evt.item.dataset.wowClass;
-                    let wowSpec = evt.item.dataset.wowSpec;
+                    let raiderName = evt.item.querySelector('span.raider__name').innerHTML;
 
-                    updateRaidBuffs(wowClass, wowSpec);
+                    removeRaiderFromActiveRaidersJSON(raiderName);
+                    updateRaidBuffs();
                 },
-                onSort: function (evt) {
-                    //console.log(evt.item.dataset.wowClass);
-                    //console.log(evt.item.dataset.wowSpec);
-                    let wowClass = evt.item.dataset.wowClass;
-                    let wowSpec = evt.item.dataset.wowSpec;
+                //onSort: function (evt) {
+                //    //console.log(evt.item.dataset.wowClass);
+                //    //console.log(evt.item.dataset.wowSpec);
+                //    //let wowClass = evt.item.dataset.wowClass;
+                //    //let wowSpec = evt.item.dataset.wowSpec;
 
-                    updateRaidBuffs(wowClass, wowSpec, true);
-                },
+                //    updateRaidBuffs();
+                //},
 
                 /*ghostClass: 'blue-background-class'*/
             });
         }
 
+        let raidersInRaid = {
+            "raiders": [
+            ],
+        };
+
+        function checkIfRaiderInArray(raiderName) {
+            let raiderInArray = false;
+
+            for (let i = raidersInRaid.raiders.length - 1; i >= 0; i--) {
+                if (raidersInRaid.raiders[i].name === raiderName) {
+                    raiderInArray = true;
+                    break;
+                }
+            }
+
+            return raiderInArray;
+        }
+
+        function addRaiderToActiveRaidersJSON(raiderName, raiderClass, raiderSpec) {
+            let raiderAdded = false;
+
+            if (!checkIfRaiderInArray(raiderName)) {
+                raidersInRaid.raiders.push(
+                    {
+                        "name": raiderName,
+                        "wowClass": raiderClass,
+                        "wowSpec": raiderSpec
+                    }
+                )
+
+                raiderAdded = true;
+            }
+
+            return raiderAdded;
+        }
+
+        function removeRaiderFromActiveRaidersJSON(raiderName) {
+            /*console.log(raiderName);*/
+            let raiderRemoved = false;
+            for (let i = raidersInRaid.raiders.length - 1; i >= 0; i--) {
+                if (raidersInRaid.raiders[i].name === raiderName) {
+                    raidersInRaid.raiders.splice(i, 1);
+                    raiderRemoved = true;
+                    break;
+                }
+            }
+
+            return raiderRemoved;
+        }
+
+        function checkIfClassInArray(wowClass) {
+            let classInArray = false;
+
+            for (let i = raidersInRaid.raiders.length - 1; i >= 0; i--) {
+                if (raidersInRaid.raiders[i].wowClass === wowClass) {
+                    classInArray = true;
+                    break;
+                }
+            }
+
+            return classInArray;
+        }
+
+        function checkIfClassSpecInArray(wowClass, wowSpec) {
+            let classSpecInArray = false;
+
+            for (let i = raidersInRaid.raiders.length - 1; i >= 0; i--) {
+                let raider = raidersInRaid.raiders[i];
+
+                if (raider.wowClass === wowClass && raider.wowSpec === wowSpec) {
+                    classSpecInArray = true;
+                    break;
+                }
+            }
+
+            return classSpecInArray;
+        }
+
+        //function updateActiveRaidersJSON() {
+        //    console.clear();
+        //    console.log('Updating raiders');
+        //    console.log(raidersInRaid.raiders);
+        //    // Get raiders currently in the raid setup
+        //    // the :not(.sortable - ghost) is to prevent including raiders that are being removed from the setup
+        //    // as they still exist in the raid setup at this time
+        //    let raiderElementsInRaid = document.querySelectorAll('.raidgroup__slots .role__raider:not(.sortable-ghost)');
+
+        //    for (let i = 0; i < raiderElementsInRaid.length; i++) {
+        //        let raiderName = raiderElementsInRaid[i].querySelector('span.raider__name').innerHTML;
+        //        let raiderClass = raiderElementsInRaid[i].dataset.wowClass;
+        //        let raiderSpec = raiderElementsInRaid[i].dataset.wowSpec;
+        //        console.log(raiderName + ": " + raiderClass + " - " + raiderSpec);
+
+        //        //for (let i = 0; i < raidersInRaid.raiders; i++) {
+        //        //    if (!raidersInRaid.raiders[i].name == raiderName) {
+
+        //        //    }
+        //        //}
+
+        //        addRaiderToActiveRaidersJSON(raiderName, raiderClass, raiderSpec);
+
+
+
+        //        console.log('After update:')
+        //        console.log(raidersInRaid.raiders);
+        //    }
+        //}
+
         const classBuffs = document.querySelectorAll('img[data-wow-class]:not([data-wow-spec]');
         const classSpecBuffs = document.querySelectorAll('img[data-wow-class][data-wow-spec]');
 
-        function updateRaidBuffs(wowClass, wowSpec, enable = false) {
-            // The raider added has a class and spec (although it always should, you never know)
-            if (wowClass !== null && wowSpec !== null) {
-                for (let i = 0; i < classSpecBuffs.length; i++) {
-                    let el = classSpecBuffs[i];
+        function updateRaidBuffs() {
+            for (let i = 0; i < classSpecBuffs.length; i++) {
+                let el = classSpecBuffs[i];
 
-                    // Check that element has the correct class AND spec (some classes have the same spec names)
-                    if (el.dataset.wowClass == wowClass && el.dataset.wowSpec == wowSpec) {
-                        console.log(el);
-                        if (enable) {
-                            console.log("REMOVE");
-                            console.log(el.classList);
-                            el.classList.remove('global-buffs--disabled');
-                        } else {
-                            console.log("ADD");
-                            console.log(el.classList);
-                            el.classList.add('global-buffs--disabled');
-                        }
-                    }
+                // Check that element has the correct class AND spec (some classes have the same spec names)
+                if (checkIfClassSpecInArray(el.dataset.wowClass, el.dataset.wowSpec)) {
+                    el.classList.remove('global-buffs--disabled');
+                } else {
+                    el.classList.add('global-buffs--disabled');
                 }
+            }
 
-                for (let i = 0; i < classBuffs.length; i++) {
-                    let el = classBuffs[i];
-                    if (el.dataset.wowClass == wowClass) {
-                        if (enable) {
-                            el.classList.remove('global-buffs--disabled');
-                        } else {
-                            el.classList.add('global-buffs--disabled');
-                        }
-                    }
+            for (let i = 0; i < classBuffs.length; i++) {
+                let el = classBuffs[i];
+
+                if (checkIfClassInArray(el.dataset.wowClass)) {
+                    el.classList.remove('global-buffs--disabled');
+                } else {
+                    el.classList.add('global-buffs--disabled');
                 }
             }
         }

@@ -97,7 +97,7 @@
     <section class="roster__overview">
         <article class="roster__spec-overviews">
             <header class="roster__header">
-                <h2 class="roster__title">Overview</h2>
+                <h2 class="roster__title">Overview - Total mains: @Model.Where(r => r.IsAlt == false).Count()</h2>
             </header>
             <article class="roster__spec-tables">
                 <table class="table">
@@ -118,6 +118,13 @@
                             </tr>
                         }
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="bold">Total: </td>
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Tank && r.IsAlt == false).Count()</td>
+                            @*<td></td>*@
+                        </tr>
+                    </tfoot>
                 </table>
                 <table class="table">
                     <thead>
@@ -130,13 +137,19 @@
                     <tbody>
                         @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Healer).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
                         {
-                            <tr>
-                                <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                                <td>@item.Item2</td>
-                                @*<td></td>*@
-                            </tr>
-                        }
+                <tr>
+                    <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
+                    <td>@item.Item2</td>
+                    @*<td></td>*@
+                </tr>}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="bold">Total: </td>
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Healer && r.IsAlt == false).Count()</td>
+                            @*<td></td>*@
+                        </tr>
+                    </tfoot>
                 </table>
                 <table class="table">
                     <thead>
@@ -156,6 +169,13 @@
                             </tr>
                         }
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="bold">Total: </td>
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Melee && r.IsAlt == false).Count()</td>
+                            @*<td></td>*@
+                        </tr>
+                    </tfoot>
                 </table>
                 <table class="table">
                     <thead>
@@ -168,13 +188,19 @@
                     <tbody>
                         @foreach (var item in Model.Where(r => r.Role == WowSpecRole.Ranged).GroupBy(r => r.Class).OrderBy(group => group.Key).Select(group => Tuple.Create(group.Key, group.Count(), group)))
                         {
-                            <tr>
-                                <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
-                                <td>@item.Item2</td>
-                                @*<td></td>*@
-                            </tr>
-                        }
+                <tr>
+                    <td class="@item.Item1.ToString().ToWowClassCssClass()">@Html.DisplayFor(modelItem => item.Item1)</td>
+                    <td>@item.Item2</td>
+                    @*<td></td>*@
+                </tr>}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="bold">Total: </td>
+                            <td>@Model.Where(r => r.Role == WowSpecRole.Ranged && r.IsAlt == false).Count()</td>
+                            @*<td></td>*@
+                        </tr>
+                    </tfoot>
                 </table>
             </article>
         </article>

@@ -230,6 +230,7 @@ namespace WoW_Guild_Tools.Controllers
             {
                 Mains = new RoleRaiders
                 {
+                    Title = "Mains",
                     Tanks = new SingleRole
                     {
                         WowSpecRole = WowSpecRole.Tank,
@@ -253,6 +254,7 @@ namespace WoW_Guild_Tools.Controllers
                 },
                 Alts = new RoleRaiders
                 {
+                    Title = "Alts",
                     Tanks = new SingleRole
                     {
                         WowSpecRole = WowSpecRole.Tank,
