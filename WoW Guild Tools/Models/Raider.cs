@@ -39,6 +39,9 @@ namespace WoW_Guild_Tools.Models
 
         [Required, Column(TypeName = "nchar(15)"), EnumValidation]
         public WowProfession Profession2 { get; set; }
+
+        public List<Recipe> Recipes { get; set; }
+
         public int? MainId { get; set; }
 
         [ForeignKey(nameof(MainId))]
