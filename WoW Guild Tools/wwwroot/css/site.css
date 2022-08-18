@@ -3159,7 +3159,8 @@ select + {
   .roster__spec-tables {
     display: flex;
     justify-content: space-around;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 16px; }
   .roster__mains .table, .roster__alts .table {
     width: 100%; }
     .roster__mains .table thead, .roster__alts .table thead {
