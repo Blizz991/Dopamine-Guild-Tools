@@ -512,12 +512,168 @@ $classSpecIconSmallSize: 14;*/
 /*$classSpecBackgroundUrl56: url('../images/classic-classes-specs-56.jpg');
 $classSpecBackgroundUrl32: url('../images/classic-classes-specs-32.jpg');
 $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
+/*$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);*/
+/*$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-wotlk-classes-specs.png);*/
+.wow-icon__deathknight {
+  display: block;
+  width: 56px;
+  height: 56px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: 0px;
+  background-position-y: 0px; }
+  .wow-icon__deathknight--medium {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative; }
+    .wow-icon__deathknight--medium:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: 0px;
+      background-position-y: 0px;
+      transform: scale(0.5) translate(-50%, -50%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__deathknight--small {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative; }
+    .wow-icon__deathknight--small:before {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: 0px;
+      background-position-y: 0px;
+      transform: scale(0.25) translate(-150%, -150%);
+      display: block;
+      position: absolute;
+      content: ""; }
+  .wow-icon__deathknight--blood {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: 0px;
+    background-position-y: -56px; }
+    .wow-icon__deathknight--blood--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__deathknight--blood--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -56px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__deathknight--blood--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__deathknight--blood--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -56px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
+  .wow-icon__deathknight--frost {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: 0px;
+    background-position-y: -112px; }
+    .wow-icon__deathknight--frost--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__deathknight--frost--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -112px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__deathknight--frost--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__deathknight--frost--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -112px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
+  .wow-icon__deathknight--unholy {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: 0px;
+    background-position-y: -168px; }
+    .wow-icon__deathknight--unholy--medium {
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: relative; }
+      .wow-icon__deathknight--unholy--medium:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -168px;
+        transform: scale(0.5) translate(-50%, -50%);
+        position: absolute;
+        content: ""; }
+    .wow-icon__deathknight--unholy--small {
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: relative; }
+      .wow-icon__deathknight--unholy--small:before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: 0px;
+        background-position-y: -168px;
+        transform: scale(0.25) translate(-150%, -150%);
+        display: block;
+        position: absolute;
+        content: ""; }
+
 .wow-icon__druid {
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: 0px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -56px;
   background-position-y: 0px; }
   .wow-icon__druid--medium {
     display: block;
@@ -528,8 +684,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: 0px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -56px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -544,8 +700,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: 0px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -56px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -555,8 +711,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: 0px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -56px;
     background-position-y: -56px; }
     .wow-icon__druid--balance--medium {
       display: block;
@@ -567,8 +723,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -582,8 +738,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -593,8 +749,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: 0px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -56px;
     background-position-y: -112px; }
     .wow-icon__druid--feralcombat--medium {
       display: block;
@@ -605,8 +761,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -620,8 +776,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -631,8 +787,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: 0px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -56px;
     background-position-y: -168px; }
     .wow-icon__druid--restoration--medium {
       display: block;
@@ -643,8 +799,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -658,8 +814,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: 0px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -56px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -670,8 +826,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -56px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -112px;
   background-position-y: 0px; }
   .wow-icon__hunter--medium {
     display: block;
@@ -682,8 +838,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -56px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -112px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -698,8 +854,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -56px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -112px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -709,8 +865,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -112px;
     background-position-y: -56px; }
     .wow-icon__hunter--beastmastery--medium {
       display: block;
@@ -721,8 +877,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -736,8 +892,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -747,8 +903,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -112px;
     background-position-y: -112px; }
     .wow-icon__hunter--marksmanship--medium {
       display: block;
@@ -759,8 +915,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -774,8 +930,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -785,8 +941,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -56px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -112px;
     background-position-y: -168px; }
     .wow-icon__hunter--survival--medium {
       display: block;
@@ -797,8 +953,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -812,8 +968,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -56px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -112px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -824,8 +980,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -112px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -168px;
   background-position-y: 0px; }
   .wow-icon__mage--medium {
     display: block;
@@ -836,8 +992,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -112px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -168px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -852,8 +1008,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -112px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -168px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -863,8 +1019,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -112px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -168px;
     background-position-y: -56px; }
     .wow-icon__mage--arcane--medium {
       display: block;
@@ -875,8 +1031,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -890,8 +1046,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -901,8 +1057,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -112px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -168px;
     background-position-y: -112px; }
     .wow-icon__mage--fire--medium {
       display: block;
@@ -913,8 +1069,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -928,8 +1084,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -939,8 +1095,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -112px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -168px;
     background-position-y: -168px; }
     .wow-icon__mage--frost--medium {
       display: block;
@@ -951,8 +1107,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -966,8 +1122,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -112px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -168px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -978,8 +1134,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -168px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -224px;
   background-position-y: 0px; }
   .wow-icon__paladin--medium {
     display: block;
@@ -990,8 +1146,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -168px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -224px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1006,8 +1162,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -168px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -224px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1017,8 +1173,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -168px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -224px;
     background-position-y: -56px; }
     .wow-icon__paladin--holy--medium {
       display: block;
@@ -1029,8 +1185,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1044,8 +1200,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1055,8 +1211,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -168px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -224px;
     background-position-y: -112px; }
     .wow-icon__paladin--protection--medium {
       display: block;
@@ -1067,8 +1223,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1082,8 +1238,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1093,8 +1249,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -168px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -224px;
     background-position-y: -168px; }
     .wow-icon__paladin--retribution--medium {
       display: block;
@@ -1105,8 +1261,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1120,8 +1276,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -168px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -224px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1132,8 +1288,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -224px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -280px;
   background-position-y: 0px; }
   .wow-icon__priest--medium {
     display: block;
@@ -1144,8 +1300,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -224px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -280px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1160,8 +1316,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -224px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -280px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1171,8 +1327,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -224px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -280px;
     background-position-y: -56px; }
     .wow-icon__priest--discipline--medium {
       display: block;
@@ -1183,8 +1339,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1198,8 +1354,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1209,8 +1365,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -224px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -280px;
     background-position-y: -112px; }
     .wow-icon__priest--holy--medium {
       display: block;
@@ -1221,8 +1377,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1236,8 +1392,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1247,8 +1403,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -224px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -280px;
     background-position-y: -168px; }
     .wow-icon__priest--shadow--medium {
       display: block;
@@ -1259,8 +1415,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1274,8 +1430,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -224px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -280px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1286,8 +1442,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -280px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -336px;
   background-position-y: 0px; }
   .wow-icon__rogue--medium {
     display: block;
@@ -1298,8 +1454,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -280px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -336px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1314,8 +1470,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -280px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -336px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1325,8 +1481,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -280px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -336px;
     background-position-y: -56px; }
     .wow-icon__rogue--assassination--medium {
       display: block;
@@ -1337,8 +1493,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1352,8 +1508,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1363,8 +1519,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -280px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -336px;
     background-position-y: -112px; }
     .wow-icon__rogue--combat--medium {
       display: block;
@@ -1375,8 +1531,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1390,8 +1546,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1401,8 +1557,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -280px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -336px;
     background-position-y: -168px; }
     .wow-icon__rogue--sublety--medium {
       display: block;
@@ -1413,8 +1569,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1428,8 +1584,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -280px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -336px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1440,8 +1596,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -336px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -392px;
   background-position-y: 0px; }
   .wow-icon__shaman--medium {
     display: block;
@@ -1452,8 +1608,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -336px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -392px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1468,8 +1624,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -336px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -392px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1479,8 +1635,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -336px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -392px;
     background-position-y: -56px; }
     .wow-icon__shaman--elemental--medium {
       display: block;
@@ -1491,8 +1647,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1506,8 +1662,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1517,8 +1673,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -336px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -392px;
     background-position-y: -112px; }
     .wow-icon__shaman--enhancement--medium {
       display: block;
@@ -1529,8 +1685,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1544,8 +1700,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1555,8 +1711,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -336px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -392px;
     background-position-y: -168px; }
     .wow-icon__shaman--restoration--medium {
       display: block;
@@ -1567,8 +1723,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1582,8 +1738,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -336px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -392px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1594,8 +1750,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -392px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -448px;
   background-position-y: 0px; }
   .wow-icon__warlock--medium {
     display: block;
@@ -1606,8 +1762,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -392px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -448px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1622,8 +1778,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -392px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -448px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1633,8 +1789,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -392px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -448px;
     background-position-y: -56px; }
     .wow-icon__warlock--affliction--medium {
       display: block;
@@ -1645,8 +1801,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1660,8 +1816,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1671,8 +1827,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -392px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -448px;
     background-position-y: -112px; }
     .wow-icon__warlock--demonology--medium {
       display: block;
@@ -1683,8 +1839,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1698,8 +1854,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1709,8 +1865,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -392px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -448px;
     background-position-y: -168px; }
     .wow-icon__warlock--destruction--medium {
       display: block;
@@ -1721,8 +1877,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1736,8 +1892,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -392px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -448px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1748,8 +1904,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
   display: block;
   width: 56px;
   height: 56px;
-  background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-  background-position-x: -448px;
+  background: url("../images/classic-wotlk-classes-specs.jpg");
+  background-position-x: -504px;
   background-position-y: 0px; }
   .wow-icon__warrior--medium {
     display: block;
@@ -1760,8 +1916,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -448px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -504px;
       background-position-y: 0px;
       transform: scale(0.5) translate(-50%, -50%);
       display: block;
@@ -1776,8 +1932,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
       display: block;
       width: 56px;
       height: 56px;
-      background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-      background-position-x: -448px;
+      background: url("../images/classic-wotlk-classes-specs.jpg");
+      background-position-x: -504px;
       background-position-y: 0px;
       transform: scale(0.25) translate(-150%, -150%);
       display: block;
@@ -1787,8 +1943,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -448px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -504px;
     background-position-y: -56px; }
     .wow-icon__warrior--arms--medium {
       display: block;
@@ -1799,8 +1955,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -56px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1814,8 +1970,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -56px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1825,8 +1981,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -448px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -504px;
     background-position-y: -112px; }
     .wow-icon__warrior--fury--medium {
       display: block;
@@ -1837,8 +1993,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -112px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1852,8 +2008,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -112px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;
@@ -1863,8 +2019,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
     display: block;
     width: 56px;
     height: 56px;
-    background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-    background-position-x: -448px;
+    background: url("../images/classic-wotlk-classes-specs.jpg");
+    background-position-x: -504px;
     background-position-y: -168px; }
     .wow-icon__warrior--protection--medium {
       display: block;
@@ -1875,8 +2031,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -168px;
         transform: scale(0.5) translate(-50%, -50%);
         position: absolute;
@@ -1890,8 +2046,8 @@ $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
         display: block;
         width: 56px;
         height: 56px;
-        background: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
-        background-position-x: -448px;
+        background: url("../images/classic-wotlk-classes-specs.jpg");
+        background-position-x: -504px;
         background-position-y: -168px;
         transform: scale(0.25) translate(-150%, -150%);
         display: block;

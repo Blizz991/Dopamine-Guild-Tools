@@ -16,10 +16,13 @@ $classSpecIconSmallSize: 14;*/
 /*$classSpecBackgroundUrl56: url('../images/classic-classes-specs-56.jpg');
 $classSpecBackgroundUrl32: url('../images/classic-classes-specs-32.jpg');
 $classSpecBackgroundUrl16: url('../images/classic-classes-specs-16.jpg');*/
-$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);
+/*$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-classes-specs.png);*/
+/*$classSpecBackgroundUrl: url(https://static.wow.weibel.dev/classic/custom/classic-wotlk-classes-specs.png);*/
+$classSpecBackgroundUrl: url('../images/classic-wotlk-classes-specs.jpg');
 $classPosition: 0;
 $specPosition: -$classSpecIconSize;
 $wowClassesSpecList: (
+    deathknight: (blood, frost, unholy),
     druid: (balance, feralcombat, restoration),
     hunter: (beastmastery, marksmanship, survival),
     mage: (arcane, fire, frost),
