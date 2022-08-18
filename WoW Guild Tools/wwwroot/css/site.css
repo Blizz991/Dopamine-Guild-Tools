@@ -2590,22 +2590,22 @@ select + {
   color: #00ADEF; }
 
 /* #region Class Colors*/
-.death-knight-text {
+.deathknight-text {
   color: #c41f3b; }
 
-.death-knight-bg {
+.deathknight-bg {
   background-color: #c41f3b !important; }
 
-.death-knight-border {
+.deathknight-border {
   border-color: #c41f3b !important; }
 
-.demon-hunter-text {
+.demonhunter-text {
   color: #a330c9; }
 
-.demon-hunter-bg {
+.demonhunter-bg {
   background-color: #a330c9 !important; }
 
-.demon-hunter-border {
+.demonhunter-border {
   border-color: #a330c9 !important; }
 
 .druid-text {
