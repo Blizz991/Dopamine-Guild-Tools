@@ -16,6 +16,7 @@ namespace WoW_Guild_Tools.Models.Enums
         Enchanting,
         Engineering,
         Herbalism,
+        Inscription,
         Jewelcrafting,
         Leatherworking,
         Mining,
