@@ -10,6 +10,8 @@ namespace WoW_Guild_Tools.Models.Enums
     {
         [Display(Name = "Select Class")]
         Unset,
+        [Display(Name = "Death Knight")]
+        DeathKnight,
         Druid,
         Hunter,
         Mage,
