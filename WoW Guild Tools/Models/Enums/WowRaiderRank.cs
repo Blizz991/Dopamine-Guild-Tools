@@ -17,6 +17,6 @@ namespace WoW_Guild_Tools.Models.Enums
         Trial,
         [Display(Name ="Raider Alt")]
         RaiderAlt,
-        Member
+        Social
     }
 }
