@@ -7,6 +7,8 @@ namespace WoW_Guild_Tools.Models
         [Display(Name = "Select Spec")]
         Unset,
         Balance,
+        Blood,
+        Unholy,
         [Display(Name = "Feral Combat")]
         FeralCombat,
         Restoration,
