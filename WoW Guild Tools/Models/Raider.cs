@@ -21,7 +21,7 @@ namespace WoW_Guild_Tools.Models
         [Required, Column(TypeName = "nchar(8)"), EnumValidation]
         public WowRace Race { get; set; }
 
-        [Required, Column(TypeName = "nchar(8)"), EnumValidation]
+        [Required, Column(TypeName = "nchar(11)"), EnumValidation]
         public WowClass Class { get; set; }
 
         [Required, Column(TypeName = "nchar(13)"), EnumValidation]
