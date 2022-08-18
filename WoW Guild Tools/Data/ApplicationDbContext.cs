@@ -20,7 +20,6 @@ namespace WoW_Guild_Tools.Data
         public DbSet<Raider> Raiders { get; set; }
         public DbSet<RaidGroup> RaidGroups { get; set; }
         public DbSet<GroupRaider> GroupRaiders { get; set; }
-        public DbSet<Profession> Professions { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
 
 

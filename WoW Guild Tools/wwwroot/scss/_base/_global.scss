@@ -28,3 +28,33 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+div.wowhead-tooltip {
+  td {
+    padding: 8px !important;
+    background: $darkHoverColor !important;
+    border-radius: 10px;
+
+    td {
+      padding: 0 !important;
+    }
+  }
+
+  th {
+    display: none;
+  }
+  /*> table:first-of-type {
+    tbody {
+      tr {
+        &:last-of-type, th {
+          display: none;
+        }
+      }
+    }
+  }*/
+}
+
+/*div.wowhead-tooltip > table > tbody > tr:last-of-type,
+div.wowhead-tooltip > table > tbody > tr > th {
+  display: none;
+}*/

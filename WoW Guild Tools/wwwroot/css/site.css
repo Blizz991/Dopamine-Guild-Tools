@@ -362,6 +362,29 @@ body {
   justify-content: space-around;
   align-items: center; }
 
+div.wowhead-tooltip {
+  /*> table:first-of-type {
+    tbody {
+      tr {
+        &:last-of-type, th {
+          display: none;
+        }
+      }
+    }
+  }*/ }
+  div.wowhead-tooltip td {
+    padding: 8px !important;
+    background: #1C1E22 !important;
+    border-radius: 10px; }
+    div.wowhead-tooltip td td {
+      padding: 0 !important; }
+  div.wowhead-tooltip th {
+    display: none; }
+
+/*div.wowhead-tooltip > table > tbody > tr:last-of-type,
+div.wowhead-tooltip > table > tbody > tr > th {
+  display: none;
+}*/
 h1 {
   font-family: "Lato", sans-serif;
   font-style: normal;
@@ -447,7 +470,7 @@ li, ol {
     margin-bottom: 0;
   }
 }*/
-body:not(div.wowhead-tooltip) a:not(.button) {
+body:not(div.wowhead-tooltip) a:not(.button, .q0, .q1, .q2, .q3, .q4, .q5, .q6) {
   color: #D9D9D9;
   position: relative;
   text-decoration: none;
@@ -456,6 +479,10 @@ body:not(div.wowhead-tooltip) a:not(.button) {
   line-height: 1.125;
   text-decoration: none;
   outline: 0; }
+
+.q0, .q1, .q2, .q3, .q4, .q5, .q6 {
+  text-decoration: none;
+  outline: none; }
 
 .text--info {
   color: #5BC0DE; }

@@ -20,10 +20,10 @@ namespace WoW_Guild_Tools.Models
         // (i.e. create the correct link for tooltip)
         public WowType Type { get; set; }
 
-        [Required]
+        [Required, Display(Name = "Recipe Id")]
         public int WowRecipeId { get; set; }
 
-        [Required]
+        [Required, Display(Name = "Crafted Item Id")]
         public int WowCraftedItemId { get; set; }
 
         public List<Raider> CrafterRaiders { get; set; }

@@ -1,0 +1,44 @@
+﻿@model WoW_Guild_Tools.Models.Recipe
+
+@{
+    ViewData["Title"] = "Add recipe";
+}
+<form asp-action="Create">
+    <section asp-validation-summary="ModelOnly" class="validation__error"></section>
+    <article class="roster-create__form-group">
+        <label asp-for="ProfessionName"></label>
+        <select class="select--search"
+                asp-for="ProfessionName"
+                asp-items="Html.GetEnumSelectList<WowProfession>()">
+        </select>
+        <span asp-validation-for="ProfessionName" class="validation__error"></span>
+    </article>
+    <article class="roster-create__form-group">
+        <label asp-for="Type"></label>
+        <select asp-for="Type"
+                asp-items="Html.GetEnumSelectList<WowType>()">
+        </select>
+        <span asp-validation-for="Type" class="validation__error"></span>
+    </article>
+    <article class="roster-create__form-group">
+        <label asp-for="WowRecipeId"></label>
+        <input placeholder="Recipe Id" asp-for="WowRecipeId" />
+        <span asp-validation-for="WowRecipeId" class="validation__error"></span>
+    </article>
+    <article class="roster-create__form-group">
+        <label asp-for="WowCraftedItemId"></label>
+        <input placeholder="Crafted item ID" asp-for="WowCraftedItemId" />
+        <span asp-validation-for="WowCraftedItemId" class="validation__error"></span>
+    </article>
+
+    <section class="roster-create__form-line roster-create__buttons">
+        <button type="submit" asp-action="Create" class="roster-create__add-raider button button--success button--icon">
+            Add recipe
+        </button>
+        <a class="roster-create__cancel button button--warning button--icon" asp-action="Index">Cancel</a>
+    </section>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
