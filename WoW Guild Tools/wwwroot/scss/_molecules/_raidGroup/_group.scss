@@ -104,21 +104,4 @@
 
     &__global-buffs {
     }
-
-    &__footer {
-    }
-
-    &__duplicate {
-        margin-right: 16px;
-
-        &:before {
-            content: "content_copy"
-        }
-    }
-
-    &__add {
-        &:before {
-            content: "add"
-        }
-    }
 }

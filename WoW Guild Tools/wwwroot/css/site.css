@@ -3188,14 +3188,6 @@ select + {
 .raidgroup__remove-group:before {
   content: 'remove'; }
 
-.raidgroup__duplicate {
-  margin-right: 16px; }
-  .raidgroup__duplicate:before {
-    content: "content_copy"; }
-
-.raidgroup__add:before {
-  content: "add"; }
-
 .roster-characters {
   grid-column: auto/span 2; }
   .roster-characters__role {
@@ -3221,6 +3213,11 @@ select + {
     flex-wrap: wrap; }
     .raids__raidgroup .raidgroup__header {
       width: 100%; }
+  .raids__footer {
+    width: 100%;
+    margin: 16px 0; }
+  .raids__add:before {
+    content: "add"; }
 
 .role__collapse {
   padding: 4px 8px; }

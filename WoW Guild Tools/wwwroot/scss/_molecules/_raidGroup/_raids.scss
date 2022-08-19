@@ -1,12 +1,23 @@
 ﻿.raids {
-  @include grid-column(8);
+    @include grid-column(8);
 
-  &__raidgroup {
-    display: flex;
-    flex-wrap: wrap;
+    &__raidgroup {
+        display: flex;
+        flex-wrap: wrap;
 
-    .raidgroup__header {
-      width: 100%;
+        .raidgroup__header {
+            width: 100%;
+        }
     }
-  }
+
+    &__footer {
+        width: 100%;
+        margin: 16px 0;
+    }
+
+    &__add {
+        &:before {
+            content: "add"
+        }
+    }
 }

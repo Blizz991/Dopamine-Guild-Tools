@@ -2,7 +2,7 @@
 @model WoW_Guild_Tools.Models.ViewModels.RosterCharactersViewModel
 
 @{
-    ViewData["Title"] = "Create Raid Setup";
+    ViewData["Title"] = "Create Raid Setups";
 }
 
 <form class="raid-setups" asp-action="Create">
@@ -35,7 +35,13 @@
                             <span asp-validation-for="Name" class="text-danger"></span>*@
                     </header>
                     <section class="raidgroup__groups">
-                        @{ await Html.RenderPartialAsync("_SingleGroup");}
+                        <section class="raidgroup__group-container">
+                            @{ for (int i = 1; i <= 5; i++)
+                                {
+                                    await Html.RenderPartialAsync("_SingleGroup", i);
+                                }
+                            }
+                        </section>
                         @*<aside class="raidgroup__options">
                                 <a class="raidgroup__add-group button icon-button button--success" aria-label="Add group" asp-action="AddGroup">
                                 </a>
@@ -49,21 +55,18 @@
                     <section class="raidgroup__global-buffs">
                         @{ await Html.RenderPartialAsync("Buffs/_RaidDebuffs");}
                     </section>
-                    @*<footer class="raidgroup__footer">
-                            <a class="raidgroup__duplicate button button--success button--icon" asp-action="DuplicateRaid">
-                                Duplicate raid
-                            </a>
-                            <a class="raidgroup__add button button--success button--icon" asp-action="AddRaid">
-                                Add raid
-                            </a>
-                        </footer>*@
                 </article>
+                <footer class="raids__footer">
+                    <a class="raids__add button button--success button--icon" asp-action="addraid">
+                        Add split
+                    </a>
+                </footer>
             </section>
         </section>
 
         @*<button type="submit" asp-action="Create" class="button button--success button--icon">
-            Publish setup
-        </button>*@
+                Publish setup
+            </button>*@
     </section>
 </form>
 
@@ -224,10 +227,9 @@
                 },
                 onSpill: function (evt) {
                     let raiderName = getRaiderName(evt.item);
-                    console.log('Start of spill... ', evt);
                     removeRaiderFromActiveRaidersJSON(raiderName);
+                    //TODO: Fix Draenei indicator not updating when removing draenei on spill
                     updateRaidBuffs();
-                    console.log('end of spill');
                 }
             });
         }
@@ -341,10 +343,10 @@
             let raidgroupGroups = document.querySelectorAll('.raidgroup__group');
             for (let i = 0; i < raidgroupGroups.length; i++) {
                 if (checkIfGroupHasDraenei(raidgroupGroups[i])) {
-                    console.log('enable icon');
+                    //console.log('enable icon');
                     raidgroupGroups[i].querySelector('.raidgroup__draenei-icon').classList.remove('raidgroup__draenei-icon--disabled');
                 } else {
-                    console.log('disable icon');
+                    //console.log('disable icon');
                     raidgroupGroups[i].querySelector('.raidgroup__draenei-icon').classList.add('raidgroup__draenei-icon--disabled');
                 }
             }
