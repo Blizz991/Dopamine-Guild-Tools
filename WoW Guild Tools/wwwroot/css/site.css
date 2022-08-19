@@ -3134,7 +3134,21 @@ select + {
       margin-bottom: 0; }
   .raidgroup__group-index {
     text-align: center;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.raidgroup__draenei-icon {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px; }
+  .raidgroup__draenei-icon--disabled {
+    -webkit-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+    -moz-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+    -ms-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8); }
 
 .raidgroup__slots {
   background: #7A8288;
